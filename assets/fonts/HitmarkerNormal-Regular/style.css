@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'Hitmarker';
+    src: local('Hitmarker Normal Regular'), local('Hitmarker-Normal-Regular'),
+        url('HitmarkerNormal-Regular.woff2') format('woff2'),
+        url('HitmarkerNormal-Regular.woff') format('woff'),
+        url('HitmarkerNormal-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+  }

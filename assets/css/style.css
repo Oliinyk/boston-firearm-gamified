@@ -1,0 +1,501 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+@font-face {
+    font-family: "Hitmarker-Normal-Light";
+    src: url("../fonts/HitmarkerNormal-Light.eot");
+    src: url("../fonts/HitmarkerNormal-Light.eot?#iefix")format("embedded-opentype"),
+        url("../fonts/HitmarkerNormal-Light.woff")format("woff"),
+        url("../fonts/HitmarkerNormal-Light.woff2")format("woff2"),
+        url("../fonts/HitmarkerNormal-Light.ttf")format("truetype"),
+        url("../fonts/HitmarkerNormal-Light.otf") format("opentype");
+    font-weight: 300;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Hitmarker-Normal";
+    src: url("../fonts/HitmarkerNormal-Regular.eot");
+    src: url("../fonts/HitmarkerNormal-Regular.eot?#iefix")format("embedded-opentype"),
+        url("../fonts/HitmarkerNormal-Regular.woff")format("woff"),
+        url("../fonts/HitmarkerNormal-Regular.woff2")format("woff2"),
+        url("../fonts/HitmarkerNormal-Regular.ttf")format("truetype"),
+        url("../fonts/HitmarkerNormal-Regular.otf") format("opentype");
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Hitmarker-Normal-Medium";
+    src: url("../fonts/HitmarkerNormal-Medium.eot");
+    src: url("../fonts/HitmarkerNormal-Medium.eot?#iefix")format("embedded-opentype"),
+        url("../fonts/HitmarkerNormal-Medium.woff")format("woff"),
+        url("../fonts/HitmarkerNormal-Medium.woff2")format("woff2"),
+        url("../fonts/HitmarkerNormal-Medium.ttf")format("truetype"),
+        url("../fonts/HitmarkerNormal-Medium.otf") format("opentype");
+    font-weight: 500;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Hitmarker-Normal-Bold";
+    src: url("../fonts/HitmarkerNormal-Bold.eot");
+    src: url("../fonts/HitmarkerNormal-Bold.eot?#iefix")format("embedded-opentype"),
+        url("../fonts/HitmarkerNormal-Bold.woff")format("woff"),
+        url("../fonts/HitmarkerNormal-Bold.woff2")format("woff2"),
+        url("../fonts/HitmarkerNormal-Bold.ttf")format("truetype"),
+        url("../fonts/HitmarkerNormal-Bold.otf") format("opentype");
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Hitmarker-Condensed-Light";
+    src: url("../fonts/HitmarkerCondensed-Light.eot");
+    src: url("../fonts/HitmarkerCondensed-Light.eot?#iefix")format("embedded-opentype"),
+        url("../fonts/HitmarkerCondensed-Light.woff")format("woff"),
+        url("../fonts/HitmarkerCondensed-Light.woff2")format("woff2"),
+        url("../fonts/HitmarkerCondensed-Light.ttf")format("truetype"),
+        url("../fonts/HitmarkerCondensed-Light.otf") format("opentype");
+    font-weight: 300;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Hitmarker-Condensed";
+    src: url("../fonts/HitmarkerCondensed-Regular.eot");
+    src: url("../fonts/HitmarkerCondensed-Regular.eot?#iefix")format("embedded-opentype"),
+        url("../fonts/HitmarkerCondensed-Regular.woff")format("woff"),
+        url("../fonts/HitmarkerCondensed-Regular.woff2")format("woff2"),
+        url("../fonts/HitmarkerCondensed-Regular.ttf")format("truetype"),
+        url("../fonts/HitmarkerCondensed-Regular.otf") format("opentype");
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Hitmarker-Condensed-Medium";
+    src: url("../fonts/HitmarkerCondensed-Medium.eot");
+    src: url("../fonts/HitmarkerCondensed-Medium.eot?#iefix")format("embedded-opentype"),
+        url("../fonts/HitmarkerCondensed-Medium.woff")format("woff"),
+        url("../fonts/HitmarkerCondensed-Medium.woff2")format("woff2"),
+        url("../fonts/HitmarkerCondensed-Medium.ttf")format("truetype"),
+        url("../fonts/HitmarkerCondensed-Medium.otf") format("opentype");
+    font-weight: 500;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Hitmarker-Condensed-Bold";
+    src: url("../fonts/HitmarkerCondensed-Bold.eot");
+    src: url("../fonts/HitmarkerCondensed-Bold.eot?#iefix")format("embedded-opentype"),
+        url("../fonts/HitmarkerCondensed-Bold.woff")format("woff"),
+        url("../fonts/HitmarkerCondensed-Bold.woff2")format("woff2"),
+        url("../fonts/HitmarkerCondensed-Bold.ttf")format("truetype"),
+        url("../fonts/HitmarkerCondensed-Bold.otf") format("opentype");
+    font-weight: 600;
+    font-style: normal;
+}
+
+.btn,
+a {
+    transition: all .25s ease-in-out;
+}
+.btn:hover {
+    opacity: 0.7;
+}
+.btn {
+    font-family: "Hitmarker-Normal-Medium";
+    font-size: 22px;
+    text-transform: uppercase;
+    color: #fff;
+    outline: none;
+    text-align: center;
+    cursor: pointer;
+    padding: 1.85rem 5rem;
+}
+.btn.btn-primary {
+    background-color: #D9374F;
+    border: 1px solid #D9374F;
+}
+.btn.btn-transparent {
+    font-size: 24px;
+    border: 1px solid rgba(255, 255, 255, .2);
+}
+
+body {
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: normal;
+    font-style: normal;
+}
+.container {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    padding-right: 15px;
+    padding-left: 15px;
+    max-width: 100%;
+}
+@media (min-width: 768px) {
+    .container {
+        width: 750px;
+    }
+}
+@media (min-width: 992px) {
+    .container {
+        width: 970px;
+    }
+}
+@media (min-width: 1200px) {
+    .container {
+        width: 1170px;
+    }
+}
+@media (min-width: 1400px) {
+    .container {
+        width: 1320px;
+    }
+}
+@media (min-width: 1800px) {
+    .container {
+        /* width: 1748px; */
+        width: 1772px;
+    } 
+}
+
+.header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+.header .header-first-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+    padding: 13px 0 17px;
+}
+.header .btn.btn-transparent {
+    font-family: 'Hitmarker-Condensed-Light';
+    padding: .55rem 3.85rem;
+}
+.title-registered {
+    font-family: 'Hitmarker-Normal-Bold';
+    font-size: 20px;
+    text-transform: uppercase;
+}
+
+.hero {
+    display: flex;
+    position: relative;
+    background-image: url('../img/hero.png');
+    background-size: cover;
+    padding: 290px 0 50px;
+
+    min-height: 100vh;
+    /* min-height: calc(100vh - 60px); */
+}
+.hero .hero-text-wrap {
+    text-align: center;
+}
+.title {
+    font-family: 'Hitmarker-Normal-Bold';
+    text-align: center;
+    color: #fff;
+    font-size: 64px;
+    word-spacing: 12px;
+    text-transform: uppercase;
+    margin: 0 auto 26px;
+    max-width: 828px;
+}
+.subtitle {
+    font-family: 'Hitmarker-Condensed-Light';
+    color: #fff;
+    font-size: 24px;
+    text-transform: uppercase;
+    margin: 0 0 35px;
+}
+.title-section {
+    font-family: 'Hitmarker-Normal-Bold';
+    font-size: 28px;
+    text-transform: uppercase;
+    text-align: center;
+    margin: 0 0 1rem;
+}
+.subtitle-section {
+    font-size: 18px;
+    text-transform: uppercase;
+    text-align: center;
+    margin: 0 0 2rem;
+}
+.hero .wrap-btn {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+.hero .wrap-btn .btn {
+    width: 100%;
+    max-width: 445px;
+    padding: 1.8rem 1rem;
+}
+.hero .full-armory {
+    position: absolute;
+    bottom: 5vh;
+    left: 5vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 10px 15px;
+    max-width: 106px;
+    font-family: "Hitmarker-Normal-Medium";
+    font-size: 16px;
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.footer {
+    /* position: fixed;
+    width: 100%;
+    left: 0;
+    bottom: 0; */
+    background-color: #0D1722;
+}
+.footer .nav {
+    display: flex;
+}
+.footer .nav .menu {
+    display: flex;
+    /* flex: 1 0 auto; */
+    gap: 1.5rem;
+    padding: 0 0 0 7.5vw;
+}
+.footer .nav a {
+    font-size: 24px;
+    text-wrap: nowrap;
+    color: rgba(255, 255, 255, .75);
+    position: relative;
+    display: flex;
+    padding: 50px 15px 8px;
+    height: 100%;
+    border-bottom: 2px solid transparent;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+.footer .nav .menu a.active,
+.footer .nav .menu a:hover {
+    border-bottom: 2px solid #D9374F;
+    background: transparent;
+    background: linear-gradient(to bottom, rgba(115, 29, 42, 0) 0%, rgba(217, 55, 79, 0.4) 100%);
+}
+.footer .nav .book-now {
+    margin: 0 4rem;
+}
+.footer .nav .book-now a {
+    font-family: "Hitmarker-Normal-Bold";
+    font-size: 24px;
+    text-wrap: wrap;
+    color: #D9374F;
+    max-width: 100px;
+    padding: 15px 15px 20px;
+}
+.footer .nav .book-now a:hover {
+    border-bottom: 2px solid transparent;
+    background: transparent;
+}
+.book-txt {
+    z-index: 2;
+}
+.footer .nav .book-now a::after {
+    position: absolute;
+    content: '';
+    bottom: 4px;
+    left: calc(50% - 90px);
+    width: 0px;
+    height: 0px;
+    border-style: solid;
+    border-width: 0 90px 150px 90px;
+    border-color: transparent transparent #132333 transparent;
+    transform: rotate(0deg);
+}
+.footer .nav .book-now a::before {
+    position: absolute;
+    content: '';
+    bottom: 2px;
+    left: calc(50% - 94px);
+    width: 0px;
+    height: 0px;
+    border-style: solid;
+    border-width: 0 94px 156px 94px;
+    border-color: transparent transparent #D9374F transparent;
+    transform: rotate(0deg);
+}
+.social-list {
+    display: flex;
+    align-items: flex-end;
+}
+.social-ico {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    max-width: 32px;
+    max-height: 32px;
+    fill: rgba(255, 255, 255, 0.75);
+}
+
+/* 2 */
+.section-how-join {
+    background-image: url('../img/how-to-join.png');
+    background-size: cover;
+    padding: 290px 0 50px;
+    min-height: 100vh;
+    color: #fff;
+}
+.how-join-step {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1135px;
+    margin: 0 auto;
+}
+.section-how-join .step-item {
+    background-image: url('../img/step-bg.svg');
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    font-family: "Hitmarker-Normal-Medium";
+    font-size: 14px;
+    text-transform: uppercase;
+    width: 100%;
+    max-width: 210px;
+    max-height: 257px;
+    padding: 2rem 1rem 3.5rem;
+}
+.section-how-join .step-title {
+    font-family: "Hitmarker-Normal-Medium";
+    font-size: 18px;
+    color: #D9374F;
+}
+.section-how-join .step-item svg {
+    max-width: 68px;
+    max-height: 69px;
+    margin: 2rem auto;
+}
+.double-arrow {
+    width: 100%;
+    max-width: 44px;
+    height: 47px;
+    fill: transparent;
+}
+
+/* 3 */
+.section-compare-packages {
+    background-image: url('../img/pistol-package-bg.png');
+    background-size: cover;
+    padding: 290px 0 50px;
+    min-height: 100vh;
+    color: #fff;
+}
+.compare-packages-wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-tabs {
+    display: flex;
+    width: 100%;
+    max-width: 654px;
+    margin: 0 auto 50px;
+}
+.nav-link {
+    font-family: "Hitmarker-Normal-Medium";
+    color: #fff;
+    cursor: pointer;
+    display: block;
+    font-size: 18px;
+    padding: 2rem 0;
+    text-align: center;
+    width: 50%;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+}
+.nav-link.active {
+    color: #D9374F;
+    border-bottom: 2px solid #D9374F;
+}
+
+
+.weapon-wrap {
+    display: flex;
+    gap: 4rem;
+    margin: 0 0 50px;
+}
+.weapon-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 492px;
+    background-color: #0F1F25;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+}
+.weapon-item .item-img {
+    padding: 2rem 0;
+}
+.weapon-item .item-title {
+    font-family: "Hitmarker-Condensed-Medium";
+    font-size: 24px;
+    background-color: rgba(0, 0, 0, 0.25);
+    padding: 0.5rem 1rem;
+    width: 100%;
+}
+.weapon-info {
+    display: flex;
+    gap: 1rem;
+    text-transform: uppercase;
+    font-size: 18px;
+}
+.weapon-info .info-title {
+    font-family: "Hitmarker-Normal-Bold";
+    font-size: 31px;
+}
+.weapon-info .btn {
+    max-width: 327px;
+    max-height: 62px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.sidebar-protection {
+    background-image: url(../img/step-bg.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    max-width: 432px;
+    max-height: 594px;
+    padding: 3rem 2rem 5rem;
+    font-size: 20px;
+}
+.title-protection {
+    margin: 0 0 25px;
+}
+.sidebar-protection a {
+    color: #D9374F;
+}
+.protection-group {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+.sidebar-protection .protection-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
