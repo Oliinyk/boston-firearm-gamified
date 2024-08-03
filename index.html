@@ -8,6 +8,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" type="text/css" href="assets/css/fullpage.css"> -->
     <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     <title>Boston Firearm</title>
@@ -27,149 +28,196 @@
         </div>
     </header>
 
-    <!-- 1 -->
-    <div class="hero">
-        <div class="container">
-            <div class="hero-text-wrap">
-                <h1 class="title">Experience  the  Thrill  of  Shooting</h1>
-                <p class="subtitle">No License Needed!</p>
-                <div class="wrap-btn">
-                    <a href="#" class="btn btn-primary">CHOOSE YOUR PACKAGE</a>
-                    <a href="#" class="btn btn-transparent">ASK A FRIEND TO JOIN WITH YOU</a>
-                </div>
-            </div>
+    <!-- <div id="fullpage"> -->
+    <div id="fullpage">
+        <!-- 1 -->
+        <div class="section panel hero">
+            <div class="container">
+                <div class="hero-wrap">
+                    <div class="hero-text-wrap">
+                        <h1 class="title">Experience the Thrill of Shooting</h1>
+                        <p class="subtitle">No License Needed!</p>
+                        <div class="wrap-btn">
+                            <a href="#" class="btn btn-primary">CHOOSE YOUR PACKAGE</a>
+                            <a href="#" class="btn btn-transparent">ASK A FRIEND TO JOIN WITH YOU</a>
+                        </div>
+                    </div>
+                    <img class="hero-shadow" src="assets/img/hero-shadow.svg" alt="">
 
-            <a href="#" class="btn btn-transparent full-armory">
-                <img src="assets/img/target-ico.svg" alt="">
-                <span>Full armory</span>
-            </a>
-        </div>
-    </div>
-
-    <!-- 2 -->
-    <section class="section-how-join">
-        <div class="container">
-            <h2 class="title-section">How to join</h2>
-            <p class="subtitle-section">How To Reserve Your Spot</p>
-            <div class="how-join-step">
-                <div class="step-item">
-                    <h4 class="step-title">STEP 01</h4>
-                    <svg>
-                        <use xlink:href='#package-ico' />
-                    </svg>
-                    <p>Choose your package</p>
-                </div>
-                <svg class="double-arrow">
-                    <use xlink:href='#double-arrow-ico' />
-                </svg>
-                <div class="step-item">
-                    <h4 class="step-title">STEP 02</h4>
-                    <svg>
-                        <use xlink:href='#calendar-ico' />
-                    </svg>
-                    <p>Pay and choose your event date</p>
-                </div>
-                <svg class="double-arrow">
-                    <use xlink:href='#double-arrow-ico' />
-                </svg>
-                <div class="step-item">
-                    <h4 class="step-title">STEP 03</h4>
-                    <svg>
-                        <use xlink:href='#gan-ico' />
-                    </svg>
-                    <p>Attend in-person and enjoy the thrill</p>
+                    <a href="#" class="btn btn-transparent full-armory">
+                        <img src="assets/img/target-ico.svg" alt="">
+                        <span>Full armory</span>
+                    </a>
                 </div>
             </div>
         </div>
-    </section>
 
-    <!-- 3 -->
-    <section class="section-compare-packages">
-        <div class="container">
-            <h2 class="title-section">Compare Packages. View Our Armory.</h2>
-            <p class="subtitle-section">No Simulations, No Plastic, No Air-soft… Real Training</p>
+        <!-- 2 -->
+        <section class="section panel section-how-join">
+            <div class="container">
+                <h2 class="title-section">How to join</h2>
+                <p class="subtitle-section">How To Reserve Your Spot</p>
+                <div class="how-join-step">
+                    <div class="step-item">
+                        <h4 class="step-title">STEP 01</h4>
+                        <svg>
+                            <use xlink:href='#package-ico' />
+                        </svg>
+                        <p>Choose your package</p>
+                    </div>
+                    <svg class="double-arrow">
+                        <use xlink:href='#double-arrow-ico' />
+                    </svg>
+                    <div class="step-item">
+                        <h4 class="step-title">STEP 02</h4>
+                        <svg>
+                            <use xlink:href='#calendar-ico' />
+                        </svg>
+                        <p>Pay and choose your event date</p>
+                    </div>
+                    <svg class="double-arrow">
+                        <use xlink:href='#double-arrow-ico' />
+                    </svg>
+                    <div class="step-item">
+                        <h4 class="step-title">STEP 03</h4>
+                        <svg>
+                            <use xlink:href='#gan-ico' />
+                        </svg>
+                        <p>Attend in-person and enjoy the thrill</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-            <div class="compare-packages-wrap">
+        <!-- 3 -->
+        <section class="section panel section-compare-packages">
+            <div class="container">
+                <div class="compare-packages-wrap">
 
-                <div class="tab-wrap">
-                    <!-- tab -->
-                    <ul class="nav-tabs">
-                        <li class="nav-link active">PISTOL package</li>
-                        <li class="nav-link">Full armory</li>
+                    <div class="tab-wrap">
+                        <h2 class="title-section">Compare Packages. View Our Armory.</h2>
+                        <p class="subtitle-section">No Simulations, No Plastic, No Air-soft… Real Training</p>
+
+                        <!-- tab -->
+                        <ul class="nav-tabs">
+                            <li class="nav-link active">PISTOL package</li>
+                            <li class="nav-link nav-full-armory">Full armory</li>
+                        </ul>
+                        <div class="tab-content">
+                            <div class="weapon-wrap">
+                                <div class="weapon-item">
+                                    <img class="item-img" src="assets/img/rugar-sr22.png" alt="Rugar sr22">
+                                    <p class="item-title">Rugar SR22</p>
+                                </div>
+
+                                <div class="weapon-item closed">
+                                    <img class="item-img" src="assets/img/M&P-15-22SERIES.png" alt="M&P 15 22 SERIES">
+                                    <p class="item-title">M&P 15-22 SERIES</p>
+
+                                    <svg class="lock-ico">
+                                        <use xlink:href='#lock-ico' />
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="weapon-info">
+                                <div>
+                                    <h4 class="info-title">$149</h4>
+                                    <p>price</p>
+                                </div>
+                                <div>
+                                    <h4 class="info-title">02hrs</h4>
+                                    <p>session duration</p>
+                                </div>
+                                <div>
+                                    <h4 class="info-title">151 bow</h4>
+                                    <p>Street Unit #2, Everett, MA 02149</p>
+                                </div>
+                                <a href="#" class="btn btn-primary">
+                                    Book your spot now
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="sidebar-protection">
+                        <h4 class="title-protection">
+                            Hearing protection and all required equipment is included for free. 
+                            <a href="#">No need to rent.</a>
+                        </h4>
+
+                        <div class="protection-group">
+                            <div class="protection-item">
+                                <img src="assets/img/gun-range-safety-glasses.png" alt="gun range safety glasses">
+                                <p>gun range safety glasses</p>
+                            </div>
+
+                            <div class="protection-item">
+                                <img src="assets/img/gun-ear-muffs.png" alt="gun ear muffs">
+                                <p>gun ear muffs</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 4 -->
+         <section class="section panel section-course-curriculum">
+            <div class="container">
+                <div>
+                    <h2>Course Curriculum</h2>
+
+                    <ul>
+                        <li>
+                            <svg>
+                                <use xlink:href='#gun-operatio-ico' />
+                            </svg>
+                            Gun operation
+                        </li>
+                        <li>
+                            <svg>
+                                <use xlink:href='#basics-shooting-ico' />
+                            </svg>
+                            The basics of shooting firearms
+                        </li>
+                        <li>
+                            <svg>
+                                <use xlink:href='#ammunition-ico' />
+                            </svg>
+                            Ammunition
+                        </li>
+                        <li>
+                            <svg>
+                                <use xlink:href='#important-marksmanship-ico' />
+                            </svg>
+                            Important marksmanship basics
+                        </li>
                     </ul>
-
-                    <div class="tab-content">
-                        <div class="weapon-wrap">
-                            <div class="weapon-item">
-                                <img class="item-img" src="assets/img/rugar-sr22.png" alt="Rugar sr22">
-                                <p class="item-title">Rugar SR22</p>
-                            </div>
-
-                            <div class="weapon-item">
-                                <img class="item-img" src="assets/img/M&P-15-22SERIES.png" alt="M&P 15 22 SERIES">
-                                <p class="item-title">M&P 15-22 SERIES</p>
-                            </div>
-                        </div>
-                        <div class="weapon-info">
-                            <div>
-                                <h4 class="info-title">$149</h4>
-                                <p>price</p>
-                            </div>
-                            <div>
-                                <h4 class="info-title">02hrs</h4>
-                                <p>session duration</p>
-                            </div>
-                            <div>
-                                <h4 class="info-title">151 bow</h4>
-                                <p>Street Unit #2, Everett, MA 02149</p>
-                            </div>
-                            <a href="#" class="btn btn-primary">
-                                Book your spot now
-                            </a>
-                        </div>
-                    </div>
                 </div>
 
-                <div class="sidebar-protection">
-                    <h4 class="title-protection">
-                        Hearing protection and all required equipment is included for free. 
-                        <a href="#">No need to rent.</a>
-                    </h4>
-
-                    <div class="protection-group">
-                        <div class="protection-item">
-                            <img src="assets/img/gun-range-safety-glasses.png" alt="gun range safety glasses">
-                            <p>gun range safety glasses</p>
-                        </div>
-
-                        <div class="protection-item">
-                            <img src="assets/img/gun-ear-muffs.png" alt="gun ear muffs">
-                            <p>gun ear muffs</p>
-                        </div>
-                    </div>
-                </div>
-
+                <div></div>
             </div>
-
-        </div>
-    </section>
+         </section>
+    </div>
 
     <footer class="footer">
         <div class="container">
 
             <nav class="nav">
                 <ul class="menu">
-                    <li class="menu-item">
-                        <a href="index.html" class="active">Home</a>
+                    <li class="menu-item" data-menuanchor="anchor1">
+                        <a href="#anchor1" class="active">Home</a>
                     </li>
-                    <li class="menu-item">
-                        <a href="packages.html">Packages</a>
+                    <li class="menu-item" data-menuanchor="anchor2">
+                        <a href="#anchor2" >Packages</a>
                     </li>
-                    <li class="menu-item">
-                        <a href="course-info.html">Course Info</a>
+                    <li class="menu-item" data-menuanchor="anchor3">
+                        <a href="#anchor3">Course Info</a>
                     </li>
-                    <li class="menu-item">
-                        <a href="armory.html">Armory</a>
+                    <li class="menu-item" data-menuanchor="anchor4">
+                        <a href="#anchor3">Armory</a>
                     </li>
 
                     <li class="menu-item book-now">
@@ -233,13 +281,54 @@
             <path d="M2 2L23.5 23.5L2 45" stroke="#D9374F" stroke-width="3"/>
             <path d="M19.5 2L41 23.5L19.5 45" stroke="#D9374F" stroke-width="3"/>
         </symbol>
+        <symbol id="lock-ico" viewBox="0 0 60 78">
+            <path d="M8.2393 77.8154C6.22164 77.8154 4.49501 77.0976 3.05941 75.662C1.62381 74.2264 0.904789 72.4985 0.902344 70.4784V33.7937C0.902344 31.776 1.62136 30.0494 3.05941 28.6138C4.49745 27.1782 6.22408 26.4591 8.2393 26.4567H11.9078V19.1197C11.9078 14.045 13.6968 9.71987 17.2748 6.14433C20.8528 2.56879 25.1779 0.779792 30.2502 0.777346C35.3225 0.774901 39.6488 2.5639 43.2292 6.14433C46.8097 9.72476 48.5975 14.0499 48.5926 19.1197V26.4567H52.261C54.2787 26.4567 56.0066 27.1757 57.4446 28.6138C58.8826 30.0518 59.6004 31.7784 59.598 33.7937V70.4784C59.598 72.4961 58.8802 74.2239 57.4446 75.662C56.009 77.1 54.2811 77.8178 52.261 77.8154H8.2393ZM30.2502 59.473C32.2678 59.473 33.9957 58.7552 35.4337 57.3196C36.8718 55.884 37.5896 54.1562 37.5871 52.136C37.5847 50.1159 36.8669 48.3893 35.4337 46.9562C34.0006 45.523 32.2727 44.804 30.2502 44.7991C28.2276 44.7942 26.501 45.5132 25.0703 46.9562C23.6396 48.3991 22.9205 50.1257 22.9132 52.136C22.9059 54.1464 23.6249 55.8742 25.0703 57.3196C26.5157 58.765 28.2423 59.4828 30.2502 59.473ZM19.2447 26.4567H41.2556V19.1197C41.2556 16.0627 40.1856 13.4642 38.0457 11.3242C35.9057 9.18428 33.3072 8.1143 30.2502 8.1143C27.1931 8.1143 24.5946 9.18428 22.4547 11.3242C20.3147 13.4642 19.2447 16.0627 19.2447 19.1197V26.4567Z" fill="#989795"/>
+        </symbol>
 
+        <symbol id="gun-operatio-ico" width="44" height="34" viewBox="0 0 44 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M35.768 9.58957e-05V2.74362H9.2068L4.31237 7.80226V15.1315L0 31.5898L8.79365 34L9.91681 29.7122L6.45989 28.7628L8.95949 23.1447H22.8278V23.1537H39.0792L39.0794 2.74343H37.5081V0H35.7679L35.768 9.58957e-05ZM40.8195 5.32946V10.3585H44V5.32936H40.8196L40.8195 5.32946ZM25.7901 6.09732H35.922V9.23678H25.7902V6.09732H25.7901ZM12.1749 15.9228H14.5435L17.7269 19.8597L18.2972 15.9229H22.8278V21.3654H9.75386L12.1749 15.9229V15.9228ZM25.5574 24.9183V28.6261H36.187V24.9183H34.5982V27.1589H32.8582V24.9183H28.9212V27.1589H27.1809V24.9183H25.5574Z" fill="white"/>
+        </symbol>
+
+        <!-- basics-shooting-ico -->
+
+        
+            
+            
 
 	</svg>
 
-
-    <script src="assets/js/wow.min.js"></script>
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/main.js"></script>
+    <!-- <script src="assets/js/fullpage.min.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
+    
+
+    <!-- <script type="text/javascript">
+        var myFullpage = new fullpage('#fullpage', {
+            verticalCentered: true,
+            // sectionsColor: ['#1bbc9b', '#4BBFC3', '#7BAABE']
+            anchors: ['anchor1', 'anchor2', 'anchor3'],
+            menu: ".menu"
+        });
+    </script> -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
+
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+
+        gsap.utils.toArray('.section').forEach((section, i) => {
+            ScrollTrigger.create({
+                trigger: section,
+                start: 'top top',
+                pin: true,
+                pinSpacing: false,
+                snap: 1
+            });
+        });
+    </script>
+
 </body>
 </html>
