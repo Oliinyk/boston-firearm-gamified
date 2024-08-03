@@ -29,7 +29,7 @@
     </header>
 
     <!-- <div id="fullpage"> -->
-    <div id="fullpage">
+    <div id="fullpage" class="scroll-container">
         <!-- 1 -->
         <div class="section panel hero">
             <div class="container">
@@ -202,6 +202,20 @@
          </section>
     </div>
 
+
+    <!-- <div class="slide-nav-container">
+        <ul class="slide-nav">
+            <li class="slide-bullet slide0 active" data-target="0"><span class="dot"></span></li>
+            <li class="slide-bullet slide1" data-target="1"><span class="dot"></span></li>
+            <li class="slide-bullet slide2" data-target="2"><span class="dot"></span></li>
+            <li class="slide-bullet slide3"data-target="3"><span class="dot"></span></li>
+        </ul>
+    </div> -->
+
+
+
+
+
     <footer class="footer">
         <div class="container">
 
@@ -315,8 +329,9 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
+    
 
-    <script>
+    <!-- <script>
         gsap.registerPlugin(ScrollTrigger);
 
         gsap.utils.toArray('.section').forEach((section, i) => {
@@ -328,7 +343,116 @@
                 snap: 1
             });
         });
+    </script> -->
+
+
+
+
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollToPlugin.min.js"></script> -->
+    <script>
+        // gsap.registerPlugin(ScrollTrigger);
+        // const firstElem = document.querySelector(".section");
+
+        // function goToSection(i, anim) {
+        //     gsap.to(window, {
+        //         scrollTo: {y: i*innerHeight + firstElem.offsetTop, autoKill: false},
+        //         duration: 1
+        //     });
+            
+        //     if(anim) {
+        //         anim.restart();
+        //     }
+        // }
+
+        // gsap.utils.toArray(".section").forEach((panel, i) => {
+        //     ScrollTrigger.create({
+        //         trigger: panel,
+        //         onEnter: () => goToSection(i)
+        //     });
+            
+        //     ScrollTrigger.create({
+        //         trigger: panel,
+        //         start: "bottom bottom",
+        //         onEnterBack: () => goToSection(i),
+        //     });
+        // });
+
+
+
+
+
+        const panel = gsap.getProperty(".section", "width");
+        // const scroller = document.querySelector(".scroll-container");
+        // let bullets = document.querySelectorAll(".slide-bullet");
+
+        const slides = document.querySelectorAll(".section");
+        const container = document.querySelector(".scroll-container");
+
+        let currentSlide = 0;
+        let oldSlide = 0;
+        let offsets = [];
+        let iw = window.innerWidth;
+
+        sizeIt();
+        // function dotAnim() {
+        //     let slideNum = currentSlide;
+        //     bullets.forEach((b) => b.classList.remove("active"));
+        //     let currentBullet = document.querySelector(".slide" + slideNum);
+        //     currentBullet.classList.add("active");
+        // }
+        function slideAnim(e) {
+            e.preventDefault()
+            let target;
+            oldSlide = currentSlide;
+
+            if (e.type == "click") {
+                target = e.target.dataset.target;
+                currentSlide = parseInt(target);
+            } else {
+                if (gsap.isTweening(container)) {
+                return;
+                }
+
+                currentSlide = e.deltaY > 0 ? (currentSlide += 1) : (currentSlide -= 1);
+                currentSlide = currentSlide < 0 ? 0 : currentSlide;
+                currentSlide =
+                currentSlide > slides.length - 1 ? slides.length - 1 : currentSlide;
+            }
+
+            if (oldSlide === currentSlide) {
+                return;
+            }
+
+            gsap.to(container, {
+                duration: 1.2,
+                ease: "expo.out",
+                x: offsets[currentSlide],
+                // onStart: dotAnim
+            });
+        }
+
+        function sizeIt() {
+            offsets = [];
+            iw = window.innerWidth;
+            gsap.set(container, { width: slides.length * iw });
+            gsap.set(slides, { width: iw });
+            for (let i = 0; i < slides.length; i++) {
+                offsets.push(-slides[i].offsetLeft);
+            }
+            gsap.set(container, { x: offsets[currentSlide] });
+        }
+
+        // bullets.forEach((b) => {
+        //     let target = b.dataset.target;
+        //     b.addEventListener("click", slideAnim);
+        // });
+        container.addEventListener("wheel", slideAnim);
+        window.addEventListener("resize", sizeIt);
+
     </script>
+
+
+
 
 </body>
 </html>

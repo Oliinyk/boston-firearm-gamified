@@ -207,6 +207,13 @@ body {
     justify-content: center;
     scroll-snap-align: start;
 }
+
+body {
+    overflow: hidden;
+}
+.scroll-container {
+    display: flex;
+}
 /*  */
 
 
