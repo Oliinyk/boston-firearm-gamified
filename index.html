@@ -534,6 +534,24 @@
     </script> -->
 
     <script>
+  
+
+        let btnAnim = () => {
+            const tlBtn = gsap.timeline({ defaults: {duration: .1 }, repeat: -1, repeatDelay: 3 });
+            tlBtn.to('.hero .btn-primary', { rotate: 25 })
+                .to('.hero .btn-primary', { rotate: -25 })
+                .to('.hero .btn-primary', { rotate: 25 })
+                .to('.hero .btn-primary', { rotate: 0 });
+            return tlBtn;
+        }
+
+        const tl = gsap.timeline({ defaults: {duration: .7 }});
+        tl.from('.title', {opacity: 0, y: 30 })
+          .from('.subtitle', {opacity: 0, y: 30 })
+          .from('.wrap-btn', {opacity: 0, y: 30 })
+          .add(btnAnim)
+        
+
         document.addEventListener('DOMContentLoaded', function () {
             const container = document.querySelector(".scroll-container");
             const panel = gsap.getProperty(".section", "width");
