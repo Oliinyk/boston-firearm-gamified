@@ -26,17 +26,6 @@ $(document).ready(function() {
     })(jQuery);
 
 
-    // $('.section-weapon .weapon-item').on('click', function() {
-    //     $('.section-weapon .weapon-item').removeClass('selected');
-    //     $(this).addClass('selected');
-
-    //     if ($(this).hasClass('selected')) {
-    //         $('.section-weapon .image-section').removeClass('selected');
-    //         $('.section-weapon .image-section').addClass('selected');
-    //     }
-
-    // });
-
     // 5
     $('.weapon-item').click(function() {
         $('.weapon-item').removeClass('selected');
@@ -51,6 +40,14 @@ $(document).ready(function() {
         $('.info-section').eq(index).addClass('selected');
     });
 
+
+    // 6
+    $('.section-experience .sidebar-item').on('click', function() {
+        var newSrc = $(this).find('img').attr('src');
+        $('.section-experience .main-image').attr('src', newSrc);
+        $('.section-experience .sidebar-item').removeClass('active');
+        $(this).addClass('active');
+    });
 
 
 

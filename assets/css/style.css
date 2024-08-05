@@ -93,33 +93,13 @@
 /* color palette */
 :root {
     --white: #ffffff;
-    --white-soft: #f8f8f8;
-    --white-mute: #f2f2f2;
-  
     --black: #000000;
-    --black-soft: #222222;
-    --black-mute: #282828;
-    --placeholder-dark: #444444;
-    
     --primary: #D9374F;
   
-    --green: #03C745;
-    --yellow: #FFE91A;
-    --ivory: #FEFCF0;
-    --violet: #E1BAFF;
-    --gray: #E9E9E9;
-  
-    --border-light: rgba(255, 255, 255, 0.5);
-
-    --divider-light-1: rgba(60, 60, 60, 0.29);
-    --divider-light-2: rgba(60, 60, 60, 0.12);
-    --divider-dark-1: rgba(84, 84, 84, 0.65);
-    --divider-dark-2: rgba(84, 84, 84, 0.48);
-  
-    --text-light-1: var(--black);
-    --text-light-2: rgba(60, 60, 60, 0.66);
-    --text-dark-1: var(--white);
-    --text-dark-2: rgba(235, 235, 235, 0.64);
+    --divider-light-1: rgba(255, 255, 255, 0.10);
+    --divider-light-2: rgba(255, 255, 255, 0.25);
+    --divider-light-3: rgba(255, 255, 255, 0.5);
+    --divider-light-4: rgba(255, 255, 255, 0.75);
 }
 
 body {
@@ -156,7 +136,8 @@ a {
 }
 .btn.btn-transparent {
     font-size: 24px;
-    border: 1px solid rgba(255, 255, 255, .2);
+    background-color: var(--divider-light-1);
+    border: 1px solid var(--divider-light-2);
 }
 
 .container {
@@ -212,7 +193,6 @@ a {
 }
 
 
-
 .slide-nav {
     position: absolute;
     left: 5%;
@@ -238,7 +218,7 @@ a {
     justify-content: space-between;
     align-items: center;
     color: var(--white);
-    border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+    border-bottom: 1px solid var(--divider-light-3);
     padding: 13px 0 17px;
 }
 .header .btn.btn-transparent {
@@ -271,10 +251,6 @@ a {
     display: flex;
     align-items: center;
     justify-content: center;
-    /* background-image: url('../img/hero-shadow.svg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    padding: 5rem 0; */
 }
 .hero-text-wrap {
     position: relative;
@@ -349,8 +325,6 @@ a {
     border: 1px solid rgba(255, 255, 255, 0.15);
     background-color: rgba(255, 255, 255, 0.05);
 }
-
-
 
 /* 2 */
 .section-how-join {
@@ -456,6 +430,7 @@ a {
     position: relative;
     width: 100%;
     max-width: 492px;
+    max-height: 225px;
     background-color: #0F1F25;
     border: 1px solid rgba(255, 255, 255, 0.4);
 }
@@ -491,7 +466,6 @@ a {
 .weapon-item:last-child .item-img {
     max-width: 410px;
 }
-
 .weapon-item .item-title {
     font-family: "Hitmarker-Condensed-Medium";
     font-size: 24px;
@@ -559,7 +533,7 @@ a {
 }
 .section-course-curriculum .title-section {
     text-align: left;
-    border-bottom: 1px solid rgba(255, 255, 255, .5);
+    border-bottom: 1px solid var(--divider-light-3);
     padding: 0 0 1.5rem;
     margin: 0 0 2rem;
 }
@@ -578,12 +552,12 @@ a {
     align-items: center;
     text-wrap: nowrap;
     border: 1px solid transparent;
-    border-bottom: 1px solid rgba(255, 255, 255, .25);
+    border-bottom: 1px solid var(--divider-light-2);
     padding: 1.4rem 0 1rem;
 }
 .course-curriculum-nav li.active {
     background-color: rgba(217, 217, 217, 0.05);
-    border: 1px solid rgba(255, 255, 255, .2);
+    border: 1px solid var(--divider-light-2);
     border-bottom:  1px solid transparent;
     box-shadow: 0px 3px 0px 0px var(--primary);
 }
@@ -741,7 +715,7 @@ a {
     max-width: 350px;
     position: relative;
     padding: 0.5rem 2rem;
-    border-left: 1px solid var(--border-light);
+    border-left: 1px solid var(--divider-light-3);
 }
 .section-weapon .weapon-item {
     cursor: pointer;
@@ -755,7 +729,7 @@ a {
     top: calc(50% - 4px);
     width: 8px;
     height: 9px;
-    border: 1px solid var(--border-light);
+    border: 1px solid var(--divider-light-3);
     background-color: #010A15;
 }
 .section-weapon .weapon-item::after {
@@ -765,7 +739,7 @@ a {
     top: 50%;
     width: calc(2rem - 4px);
     height: 1px;
-    background-color: var(--border-light);
+    background-color: var(--divider-light-3);
 }
 .section-weapon .weapon-item.selected::before {
     border: 1px solid var(--primary);
@@ -788,12 +762,10 @@ a {
     text-align: center;
     padding: 0.3rem 0;
 }
-
 .section-weapon .content {
     display: flex;
     flex-grow: 1;
 }
-
 .section-weapon .image-section {
     text-align: center;
     display: none;
@@ -805,12 +777,9 @@ a {
     font-size: 28px;
     margin: 0 0 4rem;
 }
-
 .section-weapon .image-section img {
-    /* max-width: 100%; */
     max-height: 393px;
 }
-
 .section-weapon .info-section {
     width: 100%;
     max-width: 420px;
@@ -848,12 +817,72 @@ a {
     background-size: contain;
     background-position: 50% 50%;
 }
-
-
 .section-weapon .image-section.selected,
 .section-weapon .info-section.selected {
     display: block;
 }
+
+
+/* 6 */
+.section-experience {
+    background-image: url('../img/experience-bg.png');
+}
+.section-experience .experience-sidebar {
+    width: 100%;
+    max-width: 214px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    border-left: 1px solid var(--divider-light-3);
+    
+    overflow-y: scroll;
+    max-height: 653px;
+}
+.section-experience .experience-sidebar::-webkit-scrollbar {
+    width: 5px;
+    background-color: var(--divider-light-3);
+    border-radius: 5px;
+    height: 200px;
+    width: 2px;
+}
+.section-experience .experience-sidebar::-webkit-scrollbar-thumb {
+    background: var(--white);
+}
+.section-experience .sidebar-item {
+    max-width: 136px;
+}
+.section-experience .sidebar-item img {
+    width: 100%;
+    cursor: pointer;
+    transition: transform 0.3s;
+    border: 1px solid var(--divider-light-3);
+}
+.section-experience .sidebar-item img:hover {
+    transform: scale(1.1);
+}
+.section-experience .content-text {
+    width: 80%;
+    position: relative;
+    padding: 20px;
+}
+/* .section-experience .content-text {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    color: white;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+} */
+
+.section-experience .featured-on {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+
+
+
 
 
 
@@ -877,15 +906,17 @@ a {
 .footer .nav a {
     font-size: 24px;
     text-wrap: nowrap;
-    color: rgba(255, 255, 255, .75);
+    color: var(--divider-light-4);
     position: relative;
     display: flex;
     padding: 50px 15px 8px;
     height: 100%;
-    border-bottom: 2px solid transparent;
     display: flex;
     align-items: center;
     text-align: center;
+}
+.footer .nav .menu .menu-item {
+    border-bottom: 2px solid transparent;
 }
 .footer .nav .menu .active,
 .footer .nav .menu .menu-item:hover {
