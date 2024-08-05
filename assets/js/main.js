@@ -13,6 +13,29 @@ $(document).ready(function() {
         }
     });
 
+    (function($) {
+        $(function() {
+          
+          $('.course-curriculum-nav').on('click', 'li:not(.active)', function() {
+            $(this)
+              .addClass('active').siblings().removeClass('active')
+              .closest('.course-curriculum-wrap').find('div.curriculum-desc').removeClass('active').eq($(this).index()).addClass('active');
+          });
+          
+        });
+    })(jQuery);
+
+
+    $('.section-weapon .weapon-item').on('click', function() {
+        $('.section-weapon .weapon-item').removeClass('selected');
+        $(this).addClass('selected');
+
+        // Add your logic here to update the content based on the selected item
+        // $('.section-weapon .image-section').removeClass('selected');
+        // $(this).addClass('selected');
+
+    });
+
 });
 
 // gsap
