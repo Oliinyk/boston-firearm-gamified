@@ -26,15 +26,33 @@ $(document).ready(function() {
     })(jQuery);
 
 
-    $('.section-weapon .weapon-item').on('click', function() {
-        $('.section-weapon .weapon-item').removeClass('selected');
+    // $('.section-weapon .weapon-item').on('click', function() {
+    //     $('.section-weapon .weapon-item').removeClass('selected');
+    //     $(this).addClass('selected');
+
+    //     if ($(this).hasClass('selected')) {
+    //         $('.section-weapon .image-section').removeClass('selected');
+    //         $('.section-weapon .image-section').addClass('selected');
+    //     }
+
+    // });
+
+    // 5
+    $('.weapon-item').click(function() {
+        $('.weapon-item').removeClass('selected');
+        $('.image-section').removeClass('selected');
+        $('.info-section').removeClass('selected');
+
         $(this).addClass('selected');
 
-        // Add your logic here to update the content based on the selected item
-        // $('.section-weapon .image-section').removeClass('selected');
-        // $(this).addClass('selected');
+        var index = $(this).index();
 
+        $('.image-section').eq(index).addClass('selected');
+        $('.info-section').eq(index).addClass('selected');
     });
+
+
+
 
 });
 
