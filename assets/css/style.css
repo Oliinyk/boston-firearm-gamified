@@ -178,7 +178,6 @@ a {
 /*  */
 /* .fullpage {
     overflow-y: scroll;
-    height: 100vh;
     scroll-snap-type: y mandatory;
 } */
 .section {
@@ -187,12 +186,9 @@ a {
     align-items: center;
     justify-content: center;
     scroll-snap-align: start;
-
     background-repeat: no-repeat;
     background-size: cover;
 }
-
-
 .slide-nav {
     position: absolute;
     left: 5%;
@@ -201,8 +197,16 @@ a {
     display: flex;
     justify-content: space-between;
 }
-.slide-nav-item {
+.slide-nav-item svg {
     cursor: pointer;
+    transition: all .25s ease-in-out;
+    fill: var(--white);
+    max-width: 26px;
+    max-height: 42px;
+}
+.slide-nav-item svg:hover {
+    transform: scale(1.1);
+    opacity: .75;
 }
 /*  */
 
@@ -322,8 +326,8 @@ a {
     font-family: "Hitmarker-Normal-Medium";
     font-size: 16px;
     color: var(--white);
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--divider-light-2);
+    background-color: var(--divider-light-1);
 }
 
 /* 2 */
@@ -411,7 +415,7 @@ a {
     padding: 1rem 0;
     text-align: center;
     width: 50%;
-    border-bottom: 6px solid rgba(255, 255, 255, 0.3);
+    border-bottom: 6px solid var(--divider-light-2);
 }
 .nav-link.active {
     color: var(--primary);
@@ -431,8 +435,9 @@ a {
     width: 100%;
     max-width: 492px;
     max-height: 225px;
+    max-height: 258px;
     background-color: #0F1F25;
-    border: 1px solid rgba(255, 255, 255, 0.4);
+    border: 1px solid var(--divider-light-3);
 }
 .weapon-item .lock-ico {
     display: none;
@@ -698,15 +703,15 @@ a {
 	}
 }
 
-
 /* 5 */
 .section-weapon {
     background-image: url('../img/weapon-bg.png');
 }
 .main-content {
     display: flex;
+    position: relative;
 }
-.weapon-sidebar {
+.tab-sidebar {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -715,14 +720,21 @@ a {
     max-width: 350px;
     position: relative;
     padding: 0.5rem 2rem;
-    border-left: 1px solid var(--divider-light-3);
 }
-.section-weapon .weapon-item {
+.tab-sidebar::after {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    width: 1px;
+    height: 100%;
+    background-color: var(--divider-light-3);
+}
+.sidebar-item {
     cursor: pointer;
-    border: 1px solid transparent;
     position: relative;
 }
-.section-weapon .weapon-item::before {
+.sidebar-item::before {
     position: absolute;
     content: '';
     left: calc(-2rem - 5px);
@@ -731,33 +743,34 @@ a {
     height: 9px;
     border: 1px solid var(--divider-light-3);
     background-color: #010A15;
+    z-index: 1;
 }
-.section-weapon .weapon-item::after {
+.sidebar-item::after {
     position: absolute;
     content: '';
-    left: calc(-2rem + 3px);
+    left: calc(-2rem + 4px);
     top: 50%;
     width: calc(2rem - 4px);
     height: 1px;
-    background-color: var(--divider-light-3);
 }
-.section-weapon .weapon-item.selected::before {
+.sidebar-item.selected {
+    border: 1px solid var(--primary);
+}
+.sidebar-item.selected::before {
     border: 1px solid var(--primary);
     background-color: var(--white);
 }
-.section-weapon .weapon-item.selected::after {
+.sidebar-item.selected::after {
     background-color: var(--primary);
 }
-.section-weapon .weapon-item.selected {
-    border: 1px solid var(--primary);
-}
-.section-weapon .weapon-item .item-img {
+
+.section-weapon .sidebar-item .item-img {
     margin: 1.2rem 0 0.9rem;
     padding: 0;
     max-height: 88px;
     max-width: 187px;
 }
-.section-weapon .weapon-item .item-title {
+.section-weapon .sidebar-item .item-title {
     font-size: 18px;
     text-align: center;
     padding: 0.3rem 0;
@@ -828,16 +841,18 @@ a {
     background-image: url('../img/experience-bg.png');
 }
 .section-experience .experience-sidebar {
-    width: 100%;
+    justify-content: flex-start;
     max-width: 214px;
-    display: flex;
-    flex-direction: column;
     align-items: center;
+    padding: 1rem 0;
     gap: 1rem;
-    border-left: 1px solid var(--divider-light-3);
-    
+    border: none;
     overflow-y: scroll;
     max-height: 653px;
+    position: static;
+}
+.section-experience .experience-sidebar::after {
+    left: 4px;
 }
 .section-experience .experience-sidebar::-webkit-scrollbar {
     width: 5px;
@@ -851,35 +866,71 @@ a {
 }
 .section-experience .sidebar-item {
     max-width: 136px;
+    transition: transform 0.3s;
+    border: none;
 }
 .section-experience .sidebar-item img {
-    width: 100%;
-    cursor: pointer;
     transition: transform 0.3s;
     border: 1px solid var(--divider-light-3);
+    z-index: 2;
+    position: relative;
 }
 .section-experience .sidebar-item img:hover {
     transform: scale(1.1);
 }
-.section-experience .content-text {
+.section-experience .sidebar-item.selected img {
+    border: 1px solid var(--primary);
+}
+.section-experience .content-wrap {
     width: 80%;
     position: relative;
     padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    /* background-image: url('../img/shadow-ellipse.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: 50% 0; */
 }
-/* .section-experience .content-text {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    color: white;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
-} */
+.section-experience .title-section {
+    font-family: "Hitmarker-Condensed-Bold";
+    font-size: 48px;
+}
+.section-experience .content-text {
+    max-width: 423px;
+}
+.section-experience .content-text .title-section {
+    text-align: left;
+}
 
 .section-experience .featured-on {
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
     gap: 10px;
+    margin: 1rem 0 0;
 }
-
+.title-feature {
+    font-family: "Hitmarker-Condensed-Light";
+    font-size: 16px;
+    text-transform: uppercase;
+    width: 100%;
+}
+.section-experience .featured-on img {
+    opacity: 0.5;
+}
+/* .experience-shadow {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 50%;
+    right: 0;
+    max-width: 665px;
+    max-height: 665px;
+    z-index: 0;
+} */
 
 
 
@@ -935,10 +986,6 @@ a {
     max-width: 100px;
     padding: 15px 15px 20px;
 }
-.footer .nav .book-now a:hover {
-    border-bottom: 2px solid transparent;
-    background: transparent;
-}
 .book-txt {
     z-index: 2;
 }
@@ -977,5 +1024,5 @@ a {
     height: 100%;
     max-width: 32px;
     max-height: 32px;
-    fill: rgba(255, 255, 255, 0.75);
+    fill: var(--divider-light-4);
 }

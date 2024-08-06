@@ -45,8 +45,8 @@ $(document).ready(function() {
     $('.section-experience .sidebar-item').on('click', function() {
         var newSrc = $(this).find('img').attr('src');
         $('.section-experience .main-image').attr('src', newSrc);
-        $('.section-experience .sidebar-item').removeClass('active');
-        $(this).addClass('active');
+        $('.section-experience .sidebar-item').removeClass('selected');
+        $(this).addClass('selected');
     });
 
 
