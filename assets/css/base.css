@@ -1,0 +1,183 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+@font-face {
+    font-family: "Hitmarker-Normal-Light";
+    src: url("../fonts/HitmarkerNormal-Light.eot");
+    src: url("../fonts/HitmarkerNormal-Light.eot?#iefix")format("embedded-opentype"),
+        url("../fonts/HitmarkerNormal-Light.woff")format("woff"),
+        url("../fonts/HitmarkerNormal-Light.woff2")format("woff2"),
+        url("../fonts/HitmarkerNormal-Light.ttf")format("truetype"),
+        url("../fonts/HitmarkerNormal-Light.otf") format("opentype");
+    font-weight: 300;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Hitmarker-Normal";
+    src: url("../fonts/HitmarkerNormal-Regular.eot");
+    src: url("../fonts/HitmarkerNormal-Regular.eot?#iefix")format("embedded-opentype"),
+        url("../fonts/HitmarkerNormal-Regular.woff")format("woff"),
+        url("../fonts/HitmarkerNormal-Regular.woff2")format("woff2"),
+        url("../fonts/HitmarkerNormal-Regular.ttf")format("truetype"),
+        url("../fonts/HitmarkerNormal-Regular.otf") format("opentype");
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Hitmarker-Normal-Medium";
+    src: url("../fonts/HitmarkerNormal-Medium.eot");
+    src: url("../fonts/HitmarkerNormal-Medium.eot?#iefix")format("embedded-opentype"),
+        url("../fonts/HitmarkerNormal-Medium.woff")format("woff"),
+        url("../fonts/HitmarkerNormal-Medium.woff2")format("woff2"),
+        url("../fonts/HitmarkerNormal-Medium.ttf")format("truetype"),
+        url("../fonts/HitmarkerNormal-Medium.otf") format("opentype");
+    font-weight: 500;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Hitmarker-Normal-Bold";
+    src: url("../fonts/HitmarkerNormal-Bold.eot");
+    src: url("../fonts/HitmarkerNormal-Bold.eot?#iefix")format("embedded-opentype"),
+        url("../fonts/HitmarkerNormal-Bold.woff")format("woff"),
+        url("../fonts/HitmarkerNormal-Bold.woff2")format("woff2"),
+        url("../fonts/HitmarkerNormal-Bold.ttf")format("truetype"),
+        url("../fonts/HitmarkerNormal-Bold.otf") format("opentype");
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Hitmarker-Condensed-Light";
+    src: url("../fonts/HitmarkerCondensed-Light.eot");
+    src: url("../fonts/HitmarkerCondensed-Light.eot?#iefix")format("embedded-opentype"),
+        url("../fonts/HitmarkerCondensed-Light.woff")format("woff"),
+        url("../fonts/HitmarkerCondensed-Light.woff2")format("woff2"),
+        url("../fonts/HitmarkerCondensed-Light.ttf")format("truetype"),
+        url("../fonts/HitmarkerCondensed-Light.otf") format("opentype");
+    font-weight: 300;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Hitmarker-Condensed";
+    src: url("../fonts/HitmarkerCondensed-Regular.eot");
+    src: url("../fonts/HitmarkerCondensed-Regular.eot?#iefix")format("embedded-opentype"),
+        url("../fonts/HitmarkerCondensed-Regular.woff")format("woff"),
+        url("../fonts/HitmarkerCondensed-Regular.woff2")format("woff2"),
+        url("../fonts/HitmarkerCondensed-Regular.ttf")format("truetype"),
+        url("../fonts/HitmarkerCondensed-Regular.otf") format("opentype");
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Hitmarker-Condensed-Medium";
+    src: url("../fonts/HitmarkerCondensed-Medium.eot");
+    src: url("../fonts/HitmarkerCondensed-Medium.eot?#iefix")format("embedded-opentype"),
+        url("../fonts/HitmarkerCondensed-Medium.woff")format("woff"),
+        url("../fonts/HitmarkerCondensed-Medium.woff2")format("woff2"),
+        url("../fonts/HitmarkerCondensed-Medium.ttf")format("truetype"),
+        url("../fonts/HitmarkerCondensed-Medium.otf") format("opentype");
+    font-weight: 500;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Hitmarker-Condensed-Bold";
+    src: url("../fonts/HitmarkerCondensed-Bold.eot");
+    src: url("../fonts/HitmarkerCondensed-Bold.eot?#iefix")format("embedded-opentype"),
+        url("../fonts/HitmarkerCondensed-Bold.woff")format("woff"),
+        url("../fonts/HitmarkerCondensed-Bold.woff2")format("woff2"),
+        url("../fonts/HitmarkerCondensed-Bold.ttf")format("truetype"),
+        url("../fonts/HitmarkerCondensed-Bold.otf") format("opentype");
+    font-weight: 600;
+    font-style: normal;
+}
+
+/* color palette */
+:root {
+    --white: #ffffff;
+    --black: #000000;
+    --primary: #D9374F;
+    --blue: #0D1721;
+  
+    --divider-light-1: rgba(255, 255, 255, 0.10);
+    --divider-light-2: rgba(255, 255, 255, 0.25);
+    --divider-light-3: rgba(255, 255, 255, 0.5);
+    --divider-light-4: rgba(255, 255, 255, 0.75);
+}
+
+body {
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: normal;
+    font-style: normal;
+    color: var(--white);
+    overflow: hidden;
+}
+.scroll-container {
+    display: flex;
+}
+.btn,
+a {
+    transition: all .25s ease-in-out;
+}
+.btn:hover {
+    /* opacity: 0.7; */
+    scale: 1.05;
+}
+.btn {
+    font-family: "Hitmarker-Normal-Medium";
+    font-size: 22px;
+    text-transform: uppercase;
+    color: var(--white);
+    outline: none;
+    text-align: center;
+    cursor: pointer;
+    padding: 1.85rem 5rem;
+    display: inline-block;
+}
+.btn.btn-primary {
+    background-color: var(--primary);
+    border: 1px solid var(--primary);
+}
+.btn.btn-transparent {
+    font-size: 24px;
+    background-color: var(--divider-light-1);
+    border: 1px solid var(--divider-light-2);
+}
+/* .btn.btn-transparent:hover {
+    color: var(--primary);
+    border: 1px solid var(--primary);
+} */
+
+.container {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    padding-right: 15px;
+    padding-left: 15px;
+    max-width: 100%;
+}
+@media (min-width: 768px) {
+    .container {
+        width: 750px;
+    }
+}
+@media (min-width: 992px) {
+    .container {
+        width: 970px;
+    }
+}
+@media (min-width: 1200px) {
+    .container {
+        width: 1170px;
+    }
+}
+@media (min-width: 1400px) {
+    .container {
+        width: 1320px;
+    }
+}
+@media (min-width: 1800px) {
+    .container {
+        /* width: 1748px; */
+        width: 1772px;
+    } 
+}

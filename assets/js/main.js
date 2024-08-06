@@ -34,7 +34,7 @@ $(document).ready(function() {
 
         $(this).addClass('selected');
 
-        var index = $(this).index();
+        let index = $(this).index();
 
         $('.image-section').eq(index).addClass('selected');
         $('.info-section').eq(index).addClass('selected');
@@ -43,8 +43,10 @@ $(document).ready(function() {
 
     // 6
     $('.section-experience .sidebar-item').on('click', function() {
-        var newSrc = $(this).find('img').attr('src');
-        $('.section-experience .main-image').attr('src', newSrc);
+        let newSrc = $(this).find('img').attr('src');
+
+        $('.section-experience').css('background-image', 'url('+newSrc+')');
+
         $('.section-experience .sidebar-item').removeClass('selected');
         $(this).addClass('selected');
     });
