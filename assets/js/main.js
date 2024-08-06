@@ -51,6 +51,38 @@ $(document).ready(function() {
         $(this).addClass('selected');
     });
 
+    // faq
+ 
+
+    // document.addEventListener("DOMContentLoaded", function() {
+        const faqQuestions = document.querySelectorAll(".faq-question");
+    
+        faqQuestions.forEach(question => {
+            question.addEventListener("click", function() {
+                // Закрити всі відкриті блоки перед відкриттям нового
+                faqQuestions.forEach(q => {
+                    if (q !== question) {
+                        q.classList.remove("open");
+                        q.nextElementSibling.style.maxHeight = "0";
+                    }
+                });
+    
+                // Toggle the 'open' class on the clicked question
+                this.classList.toggle("open");
+    
+                // Get the answer element next to the clicked question
+                const answer = this.nextElementSibling;
+    
+                if (this.classList.contains("open")) {
+                    // Set max-height to the answer's scrollHeight to make it visible
+                    answer.style.maxHeight = answer.scrollHeight + "px";
+                } else {
+                    // Set max-height to 0 to hide the answer
+                    answer.style.maxHeight = "0";
+                }
+            });
+        });
+    // });
 
 
 });

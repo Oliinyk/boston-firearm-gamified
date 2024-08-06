@@ -114,6 +114,9 @@ body {
 .scroll-container {
     display: flex;
 }
+a {
+    color: inherit;
+}
 .btn,
 a {
     transition: all .25s ease-in-out;
