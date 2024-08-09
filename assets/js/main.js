@@ -15,7 +15,6 @@ $(document).ready(function() {
 
     (function($) {
         $(function() {
-          
           $('.course-curriculum-nav').on('click', 'li:not(.active)', function() {
             $(this)
               .addClass('active').siblings().removeClass('active')
@@ -25,66 +24,61 @@ $(document).ready(function() {
         });
     })(jQuery);
 
-
     // 5
     $('.weapon-item').click(function() {
         $('.weapon-item').removeClass('selected');
         $('.image-section').removeClass('selected');
         $('.info-section').removeClass('selected');
-
         $(this).addClass('selected');
-
         let index = $(this).index();
-
         $('.image-section').eq(index).addClass('selected');
         $('.info-section').eq(index).addClass('selected');
     });
 
-
     // 6
     $('.section-experience .sidebar-item').on('click', function() {
         let newSrc = $(this).find('img').attr('src');
-
         $('.section-experience').css('background-image', 'url('+newSrc+')');
-
         $('.section-experience .sidebar-item').removeClass('selected');
         $(this).addClass('selected');
     });
+    // slider
+    $('.main-slider').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: false,
+        fade: true,
+        asNavFor: '.thumbnail-slider'
+    });
+    $('.thumbnail-slider').slick({
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        asNavFor: '.main-slider',
+        dots: false,
+        arrows: false,
+        // centerMode: true,
+        focusOnSelect: true
+    });
+    
 
     // faq
- 
-
-    // document.addEventListener("DOMContentLoaded", function() {
-        const faqQuestions = document.querySelectorAll(".faq-question");
-    
-        faqQuestions.forEach(question => {
-            question.addEventListener("click", function() {
-                // Закрити всі відкриті блоки перед відкриттям нового
-                faqQuestions.forEach(q => {
-                    if (q !== question) {
-                        q.classList.remove("open");
-                        q.nextElementSibling.style.maxHeight = "0";
-                    }
-                });
-    
-                // Toggle the 'open' class on the clicked question
-                this.classList.toggle("open");
-    
-                // Get the answer element next to the clicked question
-                const answer = this.nextElementSibling;
-    
-                if (this.classList.contains("open")) {
-                    // Set max-height to the answer's scrollHeight to make it visible
-                    answer.style.maxHeight = answer.scrollHeight + "px";
-                } else {
-                    // Set max-height to 0 to hide the answer
-                    answer.style.maxHeight = "0";
+    const faqQuestions = document.querySelectorAll(".faq-question");
+    faqQuestions.forEach(question => {
+        question.addEventListener("click", function() {
+            faqQuestions.forEach(q => {
+                if (q !== question) {
+                    q.classList.remove("open");
+                    q.nextElementSibling.style.maxHeight = "0";
                 }
             });
+            this.classList.toggle("open");
+            const answer = this.nextElementSibling;
+            if (this.classList.contains("open")) {
+                answer.style.maxHeight = answer.scrollHeight + "px";
+            } else {
+                answer.style.maxHeight = "0";
+            }
         });
-    // });
-
+    });
 
 });
-
-// gsap

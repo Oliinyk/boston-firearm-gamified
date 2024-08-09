@@ -1,5 +1,27 @@
-/* footer */
+/* nav */
+.slide-nav {
+    display: none;
+    position: absolute;
+    left: 5%;
+    right: 5%;
+    bottom: 12%;
+    /* display: flex; */
+    justify-content: space-between;
+}
+.slide-nav-item svg {
+    cursor: pointer;
+    transition: all .25s ease-in-out;
+    fill: var(--white);
+    max-width: 26px;
+    max-height: 42px;
+}
+.slide-nav-item svg:hover {
+    transform: scale(1.1);
+    opacity: .75;
+}
+
 .footer {
+    display: none;
     position: fixed;
     width: 100%;
     left: 0;
@@ -86,4 +108,11 @@
     max-width: 32px;
     max-height: 32px;
     fill: var(--divider-light-4);
+}
+
+@media (min-width: 992px) {
+    .slide-nav,
+    .footer {
+        display: flex;
+    }
 }

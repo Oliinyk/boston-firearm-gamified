@@ -109,11 +109,8 @@ body {
     font-weight: normal;
     font-style: normal;
     color: var(--white);
-    overflow: hidden;
 }
-.scroll-container {
-    display: flex;
-}
+
 a {
     color: inherit;
 }
@@ -127,7 +124,7 @@ a {
 }
 .btn {
     font-family: "Hitmarker-Normal-Medium";
-    font-size: 22px;
+    font-size: 15px;
     text-transform: uppercase;
     color: var(--white);
     outline: none;
@@ -141,14 +138,9 @@ a {
     border: 1px solid var(--primary);
 }
 .btn.btn-transparent {
-    font-size: 24px;
     background-color: var(--divider-light-1);
     border: 1px solid var(--divider-light-2);
 }
-/* .btn.btn-transparent:hover {
-    color: var(--primary);
-    border: 1px solid var(--primary);
-} */
 
 .container {
     position: relative;
@@ -183,4 +175,20 @@ a {
         /* width: 1748px; */
         width: 1772px;
     } 
+}
+
+
+@media (min-width: 992px) {
+    body {
+        overflow: hidden;
+    }
+    .btn {
+        font-size: 22px;
+    }
+    .btn.btn-primary {
+        font-size: 24px;
+    }
+    .scroll-container {
+        display: flex;
+    }
 }

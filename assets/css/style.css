@@ -7,37 +7,19 @@
     scroll-snap-type: y mandatory;
 } */
 .section {
-    height: 100vh;
+    /* height: 100vh; */
+    min-height: 100vh;
     display: flex;
-    align-items: center;
     justify-content: center;
     scroll-snap-align: start;
     background-repeat: no-repeat;
     background-size: cover;
+    position: relative;
+    padding: 2rem 0;
 }
-.slide-nav {
-    position: absolute;
-    left: 5%;
-    right: 5%;
-    bottom: 12%;
-    display: flex;
-    justify-content: space-between;
-}
-.slide-nav-item svg {
-    cursor: pointer;
-    transition: all .25s ease-in-out;
-    fill: var(--white);
-    max-width: 26px;
-    max-height: 42px;
-}
-.slide-nav-item svg:hover {
-    transform: scale(1.1);
-    opacity: .75;
-}
-/*  */
 
 .header {
-    position: fixed;
+    position: absolute;
     width: 100%;
     top: 0;
     left: 0;
@@ -45,29 +27,35 @@
 }
 .header .header-first-content {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
+    justify-content: center;
     color: var(--white);
-    border-bottom: 1px solid var(--divider-light-3);
-    padding: 13px 0 17px;
+    padding: 2rem 0 17px;
+    gap: 1rem;
+}
+.header .logo {
+    order: 1;
 }
 .header .btn.btn-transparent {
     font-family: 'Hitmarker-Condensed-Light';
     padding: .55rem 3.85rem;
+    order: 2;
 }
 .title-registered {
     font-family: 'Hitmarker-Normal-Bold';
     font-size: 20px;
     text-transform: uppercase;
+    order: 3;
 }
 
 /* 1 */
 .hero {
-    display: flex;
-    position: relative;
+    align-items: flex-end;
+    padding: 2rem 0;
     /* background-image: url('../img/hero.png'); */
 }
-#videobcg {
+.video-hero {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -78,7 +66,6 @@
     z-index: -1;
     transition: 1s opacity;
 }
-
 .hero::after {
     position: absolute;
     content: '';
@@ -87,7 +74,7 @@
     width: 100%;
     height: 100%;
     background: linear-gradient(to top, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, .26) 100%);
-    z-index: 0;
+    z-index: -1;
 }
 .hero-wrap {
     display: flex;
@@ -112,31 +99,32 @@
     max-height: 498px;
     margin: auto;
     z-index: 0;
+    display: none;
 }
 .title {
     font-family: 'Hitmarker-Normal-Bold';
     text-align: center;
-    font-size: 64px;
+    font-size: 24px;
     word-spacing: 12px;
     text-transform: uppercase;
-    margin: 0 auto 26px;
-    max-width: 828px;
+    margin: 0 auto 15px;
+    max-width: 320px;
 }
 .subtitle {
     font-family: 'Hitmarker-Condensed-Light';
-    font-size: 24px;
+    font-size: 18px;
     text-transform: uppercase;
     margin: 0 0 35px;
 }
 .title-section {
     font-family: 'Hitmarker-Normal-Bold';
-    font-size: 28px;
+    font-size: 24px;
     text-transform: uppercase;
     text-align: center;
     margin: 0 0 1rem;
 }
 .subtitle-section {
-    font-size: 18px;
+    font-size: 16px;
     text-transform: uppercase;
     text-align: center;
     margin: 0 0 2.85rem;
@@ -145,11 +133,13 @@
     display: flex;
     justify-content: center;
     gap: 1rem;
+    flex-direction: column;
+    align-items: center;
 }
 .hero .wrap-btn .btn {
     width: 100%;
     max-width: 445px;
-    padding: 1.8rem 1rem;
+    padding: 1rem 1rem;
 }
 .hero .full-armory {
     position: absolute;
@@ -174,14 +164,17 @@
     background-repeat: no-repeat;
     background-size: cover;
     min-height: 100vh;
+    /* padding: 3rem 0; */
 }
 .how-join-step {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-direction: column;
     width: 100%;
     max-width: 1135px;
     margin: 0 auto;
+    gap: 2rem;
 }
 .section-how-join .step-item {
     background-image: url('../img/step-bg.svg');
@@ -213,6 +206,7 @@
     max-width: 44px;
     height: 47px;
     fill: transparent;
+    display: none;
 }
 
 /* 3 */
@@ -232,16 +226,16 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-direction: column;
 }
 .tab-wrap {
     width: 100%;
-    max-width: 65%;
 }
 .nav-tabs {
     display: flex;
     width: 100%;
     max-width: 654px;
-    margin: 0 auto 5.5rem;
+    margin: 0 auto 2rem;
 }
 .nav-link {
     font-family: "Hitmarker-Normal-Medium";
@@ -261,9 +255,10 @@
 }
 .weapon-wrap {
     display: flex;
-    justify-content: space-around;
+    /* justify-content: space-between; */
+    justify-content: center;
     gap: 1rem;
-    margin: 0 0 6rem;
+    margin: 0 0 3rem;
 }
 .weapon-item {
     display: flex;
@@ -271,7 +266,7 @@
     align-items: center;
     position: relative;
     width: 100%;
-    max-width: 492px;
+    max-width: 50%;
     max-height: 225px;
     max-height: 258px;
     background-color: #0F1F25;
@@ -305,13 +300,14 @@
     height: 100%;
     object-fit: contain;
     max-width: 260px;
+    width: 100%;
 }
 .weapon-item:last-child .item-img {
     max-width: 410px;
 }
 .weapon-item .item-title {
     font-family: "Hitmarker-Condensed-Medium";
-    font-size: 24px;
+    font-size: 18px;
     text-transform: uppercase;
     background-color: rgba(0, 0, 0, 0.25);
     padding: 0.65rem 2rem;
@@ -320,18 +316,23 @@
 }
 .weapon-info {
     display: flex;
-    gap: 4rem;
     text-transform: uppercase;
-    font-size: 18px;
+    gap: 1rem;
+    font-size: 14px;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
 .weapon-info .info-title {
     font-family: "Hitmarker-Normal-Bold";
-    font-size: 31px;
+    font-size: 22px;
+    margin: 0 0 .5rem;
 }
 .weapon-info .btn {
+    font-size: 15px;
     max-width: 327px;
     max-height: 62px;
-    padding: 0;
+    padding: 1rem 0;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -369,32 +370,34 @@
 .section-course-curriculum {
     background-image: url('../img/course-curriculum.png');
 }
+.course-curriculum-wrap {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
 .section-course-curriculum .curriculum-sidebar {
     width: 100%;
     max-width: 699px;
     flex: 1 0 auto;
 }
 .section-course-curriculum .title-section {
-    text-align: left;
-    border-bottom: 1px solid var(--divider-light-3);
-    padding: 0 0 1.5rem;
     margin: 0 0 2rem;
 }
 .course-curriculum-nav {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 0.4rem;
-    /* max-width: 526px; */
     max-width: 620px;
-    margin: 0 0 5rem;
+    margin: 0 auto;
 }
 .course-curriculum-nav li {
     font-family: "Hitmarker-Normal-Bold";
-    font-size: 24px;
+    font-size: 14px;
     display: flex;
     align-items: center;
-    text-wrap: nowrap;
-    border: 1px solid transparent;
+    /* text-wrap: nowrap; */
+    /* border: 1px solid transparent; */
+    border: 1px solid var(--divider-light-2);
     border-bottom: 1px solid var(--divider-light-2);
     padding: 1.4rem 0 1rem;
 }
@@ -403,9 +406,6 @@
     border: 1px solid var(--divider-light-2);
     border-bottom:  1px solid transparent;
     box-shadow: 0px 3px 0px 0px var(--primary);
-}
-.course-curriculum-nav li.active .scroll-prompt {
-    display: flex;
 }
 .course-curriculum-nav li svg {
     max-width: 44px;
@@ -549,47 +549,21 @@
     display: flex;
     position: relative;
 }
+.section-weapon .main-content {
+    flex-wrap: wrap;
+}
 .tab-sidebar {
     display: flex;
-    flex-direction: column;
     justify-content: center;
-    gap: 2.5rem;
+    gap: 1rem;
     width: 100%;
-    max-width: 350px;
+    /* max-width: 350px; */
     position: relative;
-    padding: 0.5rem 2rem;
-}
-.tab-sidebar::after {
-    position: absolute;
-    content: '';
-    top: 0;
-    left: 0;
-    width: 1px;
-    height: 100%;
-    background-color: var(--divider-light-3);
+    margin: 0 0 3rem;
 }
 .sidebar-item {
     cursor: pointer;
     position: relative;
-}
-.sidebar-item::before {
-    position: absolute;
-    content: '';
-    left: calc(-2rem - 5px);
-    top: calc(50% - 4px);
-    width: 8px;
-    height: 9px;
-    border: 1px solid var(--divider-light-3);
-    background-color: #010A15;
-    z-index: 1;
-}
-.sidebar-item::after {
-    position: absolute;
-    content: '';
-    left: calc(-2rem + 4px);
-    top: 50%;
-    width: calc(2rem - 4px);
-    height: 1px;
 }
 .sidebar-item.selected {
     border: 1px solid var(--primary);
@@ -614,6 +588,7 @@
 }
 .section-weapon .content {
     display: flex;
+    flex-direction: column;
     flex-grow: 1;
 }
 .section-weapon .image-section {
@@ -676,9 +651,15 @@
 
 /* 6 */
 .section-experience {
-    background-image: url('../img/experience-bg.png');
+    /* background-image: url('../img/experience-bg.png'); */
+    background-color: var(--blue);
+    background-image: none !important;
+}
+.section-experience .main-content {
+    flex-direction: column;
 }
 .section-experience .experience-sidebar {
+    flex-direction: column;
     justify-content: flex-start;
     max-width: 214px;
     align-items: center;
@@ -688,6 +669,7 @@
     overflow-y: scroll;
     max-height: 653px;
     position: static;
+    display: none;
 }
 .section-experience .experience-sidebar::after {
     left: 4px;
@@ -720,11 +702,11 @@
     border: 1px solid var(--primary);
 }
 .section-experience .content-wrap {
-    width: 80%;
     position: relative;
     display: flex;
-    align-items: center;
-    justify-content: flex-end;
+    justify-content: center;
+    text-align: center;
+    margin: 0 0 3rem;
 
     /* background-image: url('../img/shadow-ellipse.svg');
     background-repeat: no-repeat;
@@ -738,10 +720,6 @@
 .section-experience .content-text {
     max-width: 423px;
 }
-.section-experience .content-text .title-section {
-    text-align: left;
-}
-
 .section-experience .featured-on {
     display: flex;
     align-items: center;
@@ -759,6 +737,25 @@
     opacity: 0.5;
 }
 
+.section-experience .main-slider {
+    margin: 0 5px 20px;
+}
+.section-experience .main-slider img {
+    width: 100%;
+    height: auto;
+}
+.section-experience .thumbnail-slider .thumbnail-item {
+    cursor: pointer;
+    margin: 0 5px;
+    border: 1px solid var(--divider-light-3);
+}
+.section-experience .thumbnail-slider .thumbnail-item.slick-current {
+    border-color: var(--primary);
+}
+.section-experience .experience-slider {
+    display: block;
+}
+
 /* 7 */
 .section-license {
     background-image: url('../img/license-bg.png');
@@ -769,7 +766,8 @@
 }
 .license-wrap {
     display: flex;
-    gap: 4rem;
+    flex-wrap: wrap;
+    gap: 2rem;
 }
 .license-content {
     width: 700%;
@@ -785,25 +783,31 @@
     max-width: 1139px;
     padding: 2.2rem 2.4rem;
     display: flex;
-    flex-direction: column;
+    /* flex-direction: column; */
     gap: .5rem;
+
+    flex-wrap: wrap;
 }
 .license-item .item-title {
     font-family: 'Hitmarker-Normal-Bold';
     font-size: 28px;
     text-transform: uppercase;
     color: var(--primary);
+    text-align: center;
+    width: 100%;
+    order: 2;
 }
 .license-item .title-wrap {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
+    order: 2;
 }
 .license-item .price-wrap {
     display: flex;
     gap: 3.5rem;
 }
-.license-item .title-wrap .btn {
+.license-item .btn.btn-transparent {
     font-family: "Inter", sans-serif;
     font-size: 18px;
     font-weight: bold;
@@ -811,16 +815,30 @@
     padding: 0.7rem 1.3rem;
     text-transform: inherit;
     border-radius: 3px;
+
+    max-width: 245px;
+    max-height: 46px;
+    margin: 0 auto;
+    order: 3;
 }
 .license-item .price {
     font-family: 'Hitmarker-Normal-Bold';
     font-size: 48px;
     margin: 0 0 .5rem;
 }
+.license-item .price-col {
+    width: 100%;
+    text-align: center;
+    order: 1;
+}
 .license-item .price-col .btn {
     font-size: 16px;
     padding: 0.7rem 0.5rem;
     width: 100%;
+    max-width: 157px;
+}
+.license-item .firearms-list {
+    order: 4;
 }
 .section-license .firearms-list li + li {
     margin: 1rem 0 0;
@@ -850,6 +868,7 @@
 .license-sidebar .license-list {
     font-size: 18px;
     margin: 0 0 2rem;
+    order: 4;
 }
 .license-sidebar .license-list li {
     margin: 0 0 1rem;
@@ -862,10 +881,13 @@
 .faq-wrap {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 .faq-col {
     width: 100%;
-    max-width: 745px;
+    /* max-width: 745px; */
+    max-width: 100%;
+    margin: 0 0 2rem;
 }
 .faq-wrap .title-section {
     text-align: left;
@@ -917,9 +939,10 @@
 }
 
 .contact-col {
-    max-width: 515px;
     margin: 0 auto;
     font-size: 24px;
+    /* max-width: 515px; */
+    max-width: 100%;
 }
 .contact-col .item-title {
     font-family: 'Hitmarker-Normal-Medium';
@@ -939,12 +962,232 @@
 
 
 
+@media (min-width: 992px) {
+    .section {
+        /* height: 100vh; */
+        align-items: center;
+        padding: 0;
+    }
+    .header {
+        position: fixed;
+    }
+    .header .header-first-content {
+        flex-direction: row;
+        justify-content: space-between;
+        border-bottom: 1px solid var(--divider-light-3);
+        padding: 13px 0 17px;
+        gap: 0;
+    }
+    .title-registered {
+        order: 2;
+    }
+    .header .btn.btn-transparent {
+        order: 3;
+    }
+    .title {
+        font-size: 64px;
+        margin: 0 auto 26px;
+        max-width: 828px;
+    }
+    .subtitle {
+        font-size: 24px;
+    }
+    .title-section {
+        font-size: 28px;
+    }
+    .subtitle-section {
+        font-size: 18px;
+    }
+    /* .section.hero {
+        align-items: center;
+    } */
+    .hero-shadow {
+        display: none;
+    }
+    .hero .wrap-btn {
+        flex-direction: row;
+        align-items: stretch;
+    }
+    .hero .wrap-btn .btn {
+        padding: 1.8rem 1rem;
+    }
 
+    /* 2 */
+    /* .section-how-join {
+        padding: 0;
+    } */
+    .double-arrow {
+        display: flex;
+    }
+    .how-join-step {
+        flex-direction: row;
+        gap: 0;
+    }
+
+    /* 3 */
+    .section-compare-packages {
+        
+    }
+    .compare-packages-wrap {
+        flex-direction: row;
+    }
+    .tab-wrap {
+        max-width: 65%;
+    }
+    .weapon-wrap {
+        gap: 2rem;
+        margin: 0 0 6rem;
+    }
+    .weapon-item {
+        max-width: 492px;
+    }
+    .nav-tabs {
+        margin: 0 auto 5.5rem;
+    }
+    .weapon-item .item-title {
+        font-size: 24px;
+    }
+    .weapon-info .info-title {
+        font-size: 31px;
+    }
+    .weapon-info {
+        font-size: 18px;
+        text-align: left;
+        gap: 4rem;
+        flex-direction: row;
+        align-items: flex-start;
+    }
+    .weapon-info .btn {
+        font-size: 22px;
+    }
+
+    /* 4 */
+    .section-course-curriculum .title-section {
+        border-bottom: 1px solid var(--divider-light-3);
+        text-align: left;
+        padding: 0 0 1.5rem;
+    }
+    .course-curriculum-nav {
+        display: grid;
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+        margin: 0 0 5rem;
+    }
+    .course-curriculum-nav li {
+        font-size: 24px;
+        border: 1px solid transparent;
+    }
+    .course-curriculum-nav li.active .scroll-prompt {
+        display: flex;
+    }
+
+    /* 5 */
+    .section-weapon .main-content {
+        flex-wrap: nowrap;
+    }
+    .section-weapon .tab-sidebar {
+        flex-direction: column;
+        max-width: 350px;
+        gap: 2.5rem;
+        padding: 0.5rem 2rem;
+        margin: 0;
+    }
+    .tab-sidebar::after {
+        position: absolute;
+        content: '';
+        top: 0;
+        left: 0;
+        width: 1px;
+        height: 100%;
+        background-color: var(--divider-light-3);
+    }
+    .sidebar-item::before {
+        position: absolute;
+        content: '';
+        left: calc(-2rem - 5px);
+        top: calc(50% - 4px);
+        width: 8px;
+        height: 9px;
+        border: 1px solid var(--divider-light-3);
+        background-color: #010A15;
+        z-index: 1;
+    }
+    .sidebar-item::after {
+        position: absolute;
+        content: '';
+        left: calc(-2rem + 4px);
+        top: 50%;
+        width: calc(2rem - 4px);
+        height: 1px;
+    }
+    .section-weapon .content {
+        flex-direction: row;
+    }
+
+    /* 6 */
+    .section-experience {
+        background-image: url('../img/experience-bg.png') !important;
+    }
+    .section-experience .main-content {
+        flex-direction: row;
+    }
+    .section-experience .experience-sidebar {
+        display: block;
+    }
+    .section-experience .content-text .title-section {
+        text-align: left;
+    }
+    .section-experience .content-wrap {
+        width: 80%;
+        align-items: center;
+        justify-content: flex-end;
+        text-align: left;
+        margin: 0;
+    }
+    .section-experience .experience-slider {
+        display: none;
+    }
+
+    /* 7 */
+    .license-wrap {
+        flex-wrap: nowrap;
+        gap: 4rem;
+    }
+    .license-item .item-title {
+        text-align: left;
+        max-width: 70%;
+        order: 1;
+    }
+    .license-item .btn.btn-transparent {
+        margin: 0 0 0 auto;
+        order: 2;
+    }
+    .license-item .price-col {
+        width: auto;
+        text-align: left;
+        order: 3;
+    }
+    .license-item .firearms-list {
+        max-width: 80%;
+        margin: 0 0 0 auto;
+        order: 4;
+    }
+
+    /* 8 */
+    /* .faq-wrap {
+        flex-wrap: nowrap;
+    } */
+    .faq-col,
+    .contact-col {
+        max-width: 50%;
+    }
+    .faq-col {
+        margin: 0;
+    }
+
+
+}
 
 @media (min-width: 768px) {
-    .license-wrap {
-        gap: 5rem;
-    }
     .banner-certificate {
         font-size: 20px;
     }
