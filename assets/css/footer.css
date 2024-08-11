@@ -1,11 +1,10 @@
 /* nav */
 .slide-nav {
     display: none;
-    position: absolute;
+    position: fixed;
     left: 5%;
     right: 5%;
     bottom: 12%;
-    /* display: flex; */
     justify-content: space-between;
 }
 .slide-nav-item svg {

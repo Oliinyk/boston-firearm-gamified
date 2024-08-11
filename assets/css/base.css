@@ -130,8 +130,9 @@ a {
     outline: none;
     text-align: center;
     cursor: pointer;
-    padding: 1.85rem 5rem;
+    padding: 0.5rem;
     display: inline-block;
+    max-width: 275px;
 }
 .btn.btn-primary {
     background-color: var(--primary);
@@ -184,6 +185,8 @@ a {
     }
     .btn {
         font-size: 22px;
+        padding: 1.85rem 5rem;
+        max-width: none;
     }
     .btn.btn-primary {
         font-size: 24px;
