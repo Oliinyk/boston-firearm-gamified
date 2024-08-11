@@ -42,6 +42,14 @@ $(document).ready(function() {
         $('.section-experience .sidebar-item').removeClass('selected');
         $(this).addClass('selected');
     });
+
+    // default background image
+    function changeBgImg() {
+        $('.section-experience').css('background-image', "url('assets/img/experience-bg.png')");
+    }
+    changeBgImg();
+
+
     // slider
     $('.main-slider').slick({
         slidesToShow: 1,
