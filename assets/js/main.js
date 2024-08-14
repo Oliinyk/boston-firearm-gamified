@@ -36,6 +36,12 @@ $(document).ready(function() {
     });
 
     // 6
+    // default background image
+    function changeBgImg() {
+        $('.section-experience').css('background-image', "url('assets/img/experience-bg.png')");
+    }
+    changeBgImg();
+
     $('.section-experience .sidebar-item').on('click', function() {
         let newSrc = $(this).find('img').attr('src');
         $('.section-experience').css('background-image', 'url('+newSrc+')');
@@ -43,11 +49,6 @@ $(document).ready(function() {
         $(this).addClass('selected');
     });
 
-    // default background image
-    function changeBgImg() {
-        $('.section-experience').css('background-image', "url('assets/img/experience-bg.png')");
-    }
-    changeBgImg();
 
 
     // slider

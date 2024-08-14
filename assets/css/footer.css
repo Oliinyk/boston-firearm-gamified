@@ -82,6 +82,7 @@
     border-width: 0 70px 130px 70px;
     border-color: transparent transparent #132333 transparent;
     transform: rotate(0deg);
+    transition: all .25s ease-in-out;
 }
 .footer .nav .book-now a::before {
     position: absolute;
@@ -98,6 +99,9 @@
 .footer .nav .book-now a:hover {
     transform: translateY(-5px);
 }
+.footer .nav .book-now a:hover:after {
+    border-color: transparent transparent #182c41 transparent;
+}
 .social-list {
     display: flex;
     /* align-items: flex-end;
@@ -110,6 +114,11 @@
     max-width: 20px;
     max-height: 20px;
     fill: var(--divider-light-4);
+    transition: transform 0.25s ease-in-out;
+}
+.social-ico:hover {
+    transform: scale(1.2);
+    fill: var(--primary);
 }
 
 @media (min-width: 1440px) {

@@ -101,9 +101,6 @@
     --divider-light-2: rgba(255, 255, 255, 0.25);
     --divider-light-3: rgba(255, 255, 255, 0.5);
     --divider-light-4: rgba(255, 255, 255, 0.75);
-
-    /* --experience-bg: url('../img/experience-bg.png'); */
-    --experience-bg: url('../img/assets/img/experience-bg.png');
 }
 
 body {
@@ -136,11 +133,12 @@ a {
     display: inline-block;
     max-width: 275px;
     position: relative;
-    transition: opacity 150ms;
 }
 .btn.btn-primary {
     background-color: var(--primary);
-    border: 1px solid var(--primary);
+}
+.btn.btn-primary:hover {
+    background-color: #ca223b;
 }
 .btn.btn-transparent {
     background-color: var(--divider-light-1);
