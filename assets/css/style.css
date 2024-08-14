@@ -274,6 +274,7 @@
     max-width: 210px;
     max-height: 257px;
     padding: 2.2rem 1rem 2.6rem;
+    opacity: 0;
 }
 .section-how-join .step-title {
     font-family: "Hitmarker-Normal-Medium";
