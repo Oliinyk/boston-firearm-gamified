@@ -219,12 +219,6 @@
     width: 100%;
 }
 
-
-
-
-
-
-
 .hero .full-armory {
     position: absolute;
     bottom: 5vh;
@@ -248,7 +242,6 @@
     background-repeat: no-repeat;
     background-size: cover;
     min-height: 100vh;
-    padding: 4rem 0 10rem;
 }
 .how-join-step {
     display: flex;
@@ -258,7 +251,7 @@
     width: 100%;
     max-width: 1135px;
     margin: 0 auto;
-    gap: 7rem;
+    gap: 5rem;
 }
 .section-how-join .step-item {
     background-image: url('../img/step-bg.svg');
@@ -274,7 +267,6 @@
     max-width: 210px;
     max-height: 257px;
     padding: 2.2rem 1rem 2.6rem;
-    opacity: 0;
 }
 .section-how-join .step-title {
     font-family: "Hitmarker-Normal-Medium";
@@ -311,12 +303,6 @@
 /* 3 */
 .section-compare-packages {
     background-image: url('../img/pistol-package-bg.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-    min-height: 100vh;
-    color: var(--white);
-    display: flex;
-    align-items: center;
     padding: 3rem 0;
 }
 .section-compare-packages.full-armory-active {
@@ -371,6 +357,7 @@
     max-height: 258px;
     background-color: #0F1F25;
     border: 1px solid var(--divider-light-3);
+    box-shadow: 0px 8px 12px 0px rgba(0, 0, 0, 0.5);
 }
 .weapon-item .lock-ico {
     display: none;
@@ -427,13 +414,14 @@
     left: 5px!important;
 }
 .weapon-info {
-    display: flex;
+    display: grid;
+    /* display: flex; */
     text-transform: uppercase;
     gap: 1rem;
     font-size: 14px;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+    /* flex-direction: column; */
+    /* align-items: center; */
+    /* text-align: center; */
 }
 .weapon-info .info-title {
     font-family: "Hitmarker-Normal-Bold";
@@ -777,6 +765,7 @@
 /* 6 */
 .section-experience {
     background-color: var(--blue);
+    min-height: auto;
 }
 .section-experience .main-content {
     flex-direction: column;
@@ -1103,10 +1092,27 @@
     font-family: 'Hitmarker-Normal-Bold';
 }
 
-@media (max-width: 991px) {
+/* @media (max-width: 991px) {
     .section-experience {
         background-image: none!important;
     }
+} */
+
+@media (min-width: 768px) {
+    /* 3 */
+    .weapon-item .item-img {
+        /* padding: 2.2rem 0 0.9rem; */
+        padding: 2.2rem 1rem 0;
+        max-width: 260px;
+    }
+    .section-compare-packages .weapon-item:last-child .item-img {
+        max-width: 410px;
+    }
+
+    /* 7 */
+    /* .banner-certificate .img-holder {
+        margin: -55px 0 -75px;
+    } */
 }
 
 @media (min-width: 992px) {
@@ -1154,7 +1160,8 @@
         margin: 0 0 2.85rem;
     }
     .section.hero {
-        padding: 2rem 0;
+        padding: 0;
+        /* padding: 2rem 0; */
     }
     .hero-shadow {
         display: none;
@@ -1172,9 +1179,6 @@
     /* .section.section-how-join {
         padding: 2rem 0;
     } */
-    /* .double-arrow {
-        display: flex;
-    } */
     .how-join-step .scroll-prompt {
         display: flex;
     }
@@ -1184,6 +1188,7 @@
     }
     .section-how-join .step-item {
         padding: 2rem 1rem 3.5rem;
+        opacity: 0;
     }
     .section-how-join .step-item svg {
         margin: 1.5rem auto;
@@ -1201,7 +1206,7 @@
     }
     .weapon-wrap {
         gap: 2rem;
-        margin: 0 0 3rem;
+        margin: 0 0 2rem;
     }
     .weapon-item {
         max-width: 492px;
@@ -1211,24 +1216,22 @@
         max-height: 78px;
     }
     .nav-tabs {
-        margin: 0 auto 3rem;
+        margin: 0 auto 2rem;
     }
     .weapon-item .item-title {
         font-size: 24px;
-        padding: 0.65rem 2rem;
-    }
-    .weapon-info .info-title {
-        font-size: 31px;
+        padding: 0.65rem 1rem;
     }
     .weapon-info {
-        font-size: 18px;
+        /* font-size: 18px; */
         text-align: left;
-        gap: 4rem;
-        flex-direction: row;
+        gap: 2rem;
+        /* flex-direction: row; */
         align-items: flex-start;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
     .weapon-info .btn {
-        font-size: 22px;
+        /* font-size: 22px; */
         padding: 1rem 0;
         max-width: 327px;
     }
@@ -1286,7 +1289,7 @@
         margin: 0;
     }
     .sidebar-item {
-        max-height: 138px;
+        height: 138px;
     }
     .tab-sidebar::after {
         position: absolute;
@@ -1324,6 +1327,9 @@
     }
 
     /* 6 */
+    /* .section-experience {
+        background-image: url('../img/experience-bg.png')!important;
+    } */
     .section-experience .main-content {
         flex-direction: row;
     }
@@ -1446,19 +1452,29 @@
 
 }
 
-@media (min-width: 768px) {
-    /* 3 */
-    .weapon-item .item-img {
-        /* padding: 2.2rem 0 0.9rem; */
-        padding: 1.2rem 0 0;
-        max-width: 260px;
+@media (min-width: 1400px) {
+    .weapon-info {
+        grid-template-columns: repeat(6, minmax(0, 1fr));
+        gap: 4rem;
+        font-size: 18px;
     }
-    .section-compare-packages .weapon-item:last-child .item-img {
-        max-width: 410px;
+    .nav-tabs {
+        margin: 0 auto 3rem;
     }
-
-    /* 7 */
-    /* .banner-certificate .img-holder {
-        margin: -55px 0 -75px;
-    } */
+    .weapon-wrap {
+        margin: 0 0 3rem;
+    }
+    .weapon-info .weapon-info-title,
+    .weapon-info .btn {
+        grid-column: span 2 / span 2;
+    }
+    .weapon-info .btn {
+        font-size: 22px;
+    }
+    .weapon-info .info-title {
+        font-size: 31px;
+    }
+    .weapon-item .item-title {
+        padding: 0.65rem 2rem;
+    }
 }

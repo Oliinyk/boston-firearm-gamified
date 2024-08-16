@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
-<meta name="viewport" content="width=device-width; initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
 <head>
     <meta charset="UTF-8">
@@ -67,7 +67,7 @@
         </div>
 
         <!-- 2 -->
-        <section class="section section-how-join" data-depth="0.3">
+        <section class="section section-how-join">
             <div class="container">
                 <h2 class="title-section">How to join</h2>
                 <p class="subtitle-section">How To Reserve Your Spot</p>
@@ -129,7 +129,7 @@
         </section>
 
         <!-- 3 -->
-        <section class="section section-compare-packages parallax" data-depth="0.3">
+        <section class="section section-compare-packages">
             <div class="container">
                 <div class="compare-packages-wrap">
 
@@ -170,7 +170,7 @@
                                     <h4 class="info-title">02hrs</h4>
                                     <p>session duration</p>
                                 </div>
-                                <div>
+                                <div class="weapon-info-title">
                                     <h4 class="info-title">151 bow</h4>
                                     <p>Street Unit #2, Everett, MA 02149</p>
                                 </div>
@@ -207,7 +207,7 @@
         </section>
 
         <!-- 4 -->
-        <section class="section section-course-curriculum parallax" data-depth="0.3">
+        <section class="section section-course-curriculum parallax">
             <div class="container">
                 <div class="course-curriculum-wrap">
 
@@ -220,7 +220,6 @@
                                     <svg><use xlink:href='#gun-operatio-ico' /></svg>
                                 </span>
                                 Gun operation
-
                                 <!-- arrow -->
                                 <div class="scroll-prompt">
                                     <div class="scroll-prompt-arrow-container">
@@ -234,14 +233,12 @@
                                         </div>
                                     </div>
                                 </div>
-
                             </li>
                             <li>
                                 <span class="wrap-ico">
                                     <img src="assets/img/shooting-ico.svg" alt="basics shooting icon">
                                 </span>
                                 The basics of shooting firearms
-
                                 <!-- arrow -->
                                 <div class="scroll-prompt">
                                     <div class="scroll-prompt-arrow-container">
@@ -253,14 +250,12 @@
                                         </div>
                                     </div>
                                 </div>
-
                             </li>
                             <li>
                                 <span class="wrap-ico">
                                     <img src="assets/img/ammunition-ico.svg" alt="ammunition icon">
                                 </span>
                                 Ammunition
-
                                 <!-- arrow -->
                                 <div class="scroll-prompt">
                                     <div class="scroll-prompt-arrow-container">
@@ -272,7 +267,6 @@
                                         </div>
                                     </div>
                                 </div>
-
                             </li>
                             <li>
                                 <span class="wrap-ico">
@@ -330,7 +324,7 @@
         </section>
 
         <!-- 5 -->
-        <section class="section section-weapon parallax" data-depth="0.3">
+        <section class="section section-weapon parallax">
             <div class="container">
                 <div class="main-content">
                     <div class="tab-sidebar weapon-sidebar">
@@ -399,7 +393,7 @@
         </section>
 
         <!-- 6 -->
-        <section class="section section-experience parallax" data-depth="0.3">
+        <section class="section section-experience parallax">
             <div class="container">
                 <div class="main-content">
                     <div class="tab-sidebar experience-sidebar">
@@ -468,7 +462,7 @@
         </section>
 
         <!-- 7 -->
-        <section class="section section-license parallax" data-depth="0.3">
+        <section class="section section-license parallax">
             <div class="container">
 
                 <div class="license-wrap">
@@ -544,7 +538,7 @@
         </section>
 
         <!-- 8 -->
-        <section class="section section-faq parallax" data-depth="0.3">
+        <section class="section section-faq parallax">
             <div class="container">
                 <div class="faq-wrap">
 
@@ -1089,8 +1083,6 @@
         // });
 
 
-
-
         document.addEventListener('DOMContentLoaded', function () {
             let container;
             let slideAnim;
@@ -1141,17 +1133,43 @@
                         return;
                     }
 
+                    
+                    // 1
                     gsap.to(container, {
                         duration: 1.1,
                         ease: "expo.out",
                         x: offsets[currentSlide],
-                        // onStart: updateActiveMenuItem,
                         onStart: updateActiveMenuItem,
-                                function() {
-                                    if (currentSlide === 1) {
-                                        animateStepItems();
-                                    }
-                                }
+                        function() {
+                            if (currentSlide === 0) {
+                                animateStepItems1();
+                            }
+                        }
+                    });
+
+                    // 2
+                    gsap.to(container, {
+                        duration: 1.1,
+                        ease: "expo.out",
+                        x: offsets[currentSlide],
+                        onStart: updateActiveMenuItem,
+                        function() {
+                            if (currentSlide === 1) {
+                                animateStepItems2();
+                            }
+                        }
+                    });
+                    // slide 4
+                    gsap.to(container, {
+                        duration: 1.1,
+                        ease: "expo.out",
+                        x: offsets[currentSlide],
+                        onStart: updateActiveMenuItem,
+                        function() {
+                            if (currentSlide === 3) {
+                                animateStepItems4();
+                            }
+                        }
                     });
                 }
 
@@ -1162,7 +1180,25 @@
                     }
                 }
 
-                function animateStepItems() {
+                // 1
+                function animateStepItems1() {
+                    gsap.killTweensOf('.title');
+                    
+                    gsap.fromTo('.title, .subtitle, .wrap-btn',
+                        { opacity: 0, y: 500 }, 
+                        { 
+                            opacity: 1, 
+                            y: 0, 
+                            stagger: 0.2, 
+                            duration: 1.5, 
+                            ease: "power2.out"
+                        }
+                    );
+                }
+                animateStepItems1();
+
+                // 2
+                function animateStepItems2() {
                     gsap.killTweensOf('.step-item, .scroll-prompt');
                     
                     gsap.fromTo('.step-item, .scroll-prompt', 
@@ -1170,6 +1206,22 @@
                         { 
                             opacity: 1, 
                             x: 0, 
+                            stagger: 0.2, 
+                            duration: 1.5, 
+                            ease: "power2.out"
+                        }
+                    );
+                }
+
+                // 4
+                function animateStepItems4() {
+                    gsap.killTweensOf('.course-curriculum-nav li, .curriculum-desc');
+                    
+                    gsap.fromTo('.course-curriculum-nav li, .curriculum-desc',
+                        { opacity: 0, y: 500 }, 
+                        { 
+                            opacity: 1, 
+                            y: 0, 
                             stagger: 0.2, 
                             duration: 1.5, 
                             ease: "power2.out"
@@ -1217,7 +1269,6 @@
             if (window.innerWidth >= 992) {
                 initScript();
             }
-
 
             window.addEventListener('resize', function () {
                 if (window.innerWidth >= 992) {

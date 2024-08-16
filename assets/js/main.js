@@ -37,16 +37,33 @@ $(document).ready(function() {
 
     // 6
     // default background image
+    // function changeBgImg() {
+    //     $('.section-experience').css('background-image', "url('assets/img/experience-bg.png')");
+    // }
+    // changeBgImg();
+
+    // $('.section-experience .sidebar-item').on('click', function() {
+    //     let newSrc = $(this).find('img').attr('src');
+    //     $('.section-experience').css('background-image', 'url('+newSrc+')');
+    //     $('.section-experience .sidebar-item').removeClass('selected');
+    //     $(this).addClass('selected');
+    // });
+
+    // 
     function changeBgImg() {
-        $('.section-experience').css('background-image', "url('assets/img/experience-bg.png')");
+        if ($(window).width() >= 992) {
+            $('.section-experience').css('background-image', "url('assets/img/experience-bg.png')");
+        }
     }
     changeBgImg();
-
+    
     $('.section-experience .sidebar-item').on('click', function() {
-        let newSrc = $(this).find('img').attr('src');
-        $('.section-experience').css('background-image', 'url('+newSrc+')');
-        $('.section-experience .sidebar-item').removeClass('selected');
-        $(this).addClass('selected');
+        if ($(window).width() >= 992) {
+            let newSrc = $(this).find('img').attr('src');
+            $('.section-experience').css('background-image', 'url(' + newSrc + ')');
+            $('.section-experience .sidebar-item').removeClass('selected');
+            $(this).addClass('selected');
+        }
     });
 
 
@@ -90,4 +107,8 @@ $(document).ready(function() {
         });
     });
 
+
+    $(window).on('resize', function() {
+        changeBgImg();
+    });
 });
