@@ -238,15 +238,23 @@ a {
     stroke-width: 2;
 }
 .line-icon {
-    fill: none;
     stroke-linecap: round;
     stroke-linejoin: round;
     stroke-dasharray: 280;
     stroke-dashoffset: 0;
+    stroke: #fff;
+    stroke-width: 2;
+    fill: #fff;
+}
+.line-gan-icon {
+    stroke: #fff;
+    stroke-width: 4;
+    stroke-linecap: round;
+    stroke-linejoin: round;
 }
 .line-icon:hover {
-    -webkit-animation: draw 3s linear alternate infinite;
-    animation: draw 3s linear alternate infinite;
+    -webkit-animation: draw 4s linear alternate infinite;
+    animation: draw 4s linear alternate infinite;
     stroke: var(--primary);
 }
 @-webkit-keyframes draw {

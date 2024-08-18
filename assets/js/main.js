@@ -59,41 +59,33 @@ $(document).ready(function() {
                 onStart: updateActiveMenuItem,
                 function() {
                     if (currentSlide === 0) {
+                        // slide 1
                         animateStepItems1();
-                    }
-                }
-            });
-
-            // 2
-            gsap.to(container, {
-                duration: 1.1,
-                ease: "expo.out",
-                x: offsets[currentSlide],
-                onStart: updateActiveMenuItem,
-                function() {
-                    if (currentSlide === 1) {
+                    } else if (currentSlide === 1) {
+                        // slide 2
                         animateStepItems2();
-                    }
-                }
-            });
-            // slide 4
-            gsap.to(container, {
-                duration: 1.1,
-                ease: "expo.out",
-                x: offsets[currentSlide],
-                onStart: updateActiveMenuItem,
-                function() {
-                    if (currentSlide === 3) {
+                    } else if (currentSlide === 3) {
+                        // slide 4
                         animateStepItems4();
                     }
+
                 }
             });
         }
 
         function updateActiveMenuItem() {
+            // removing the active class from all menu elements
             menuItems.forEach(item => item.classList.remove('active'));
-            if (menuItems[currentSlide]) {
-                menuItems[currentSlide].classList.add('active');
+        
+            // The data-slide value can be extracted from the flow section
+            const currentSlideData = slides[currentSlide].getAttribute('data-slide');
+        
+            // Find the menu item where data-target is equal to currentSlideData
+            const activeMenuItem = Array.from(menuItems).find(item => item.getAttribute('data-target') === currentSlideData);
+        
+            // add the active class to the found menu item
+            if (activeMenuItem) {
+                activeMenuItem.classList.add('active');
             }
         }
 
@@ -162,8 +154,17 @@ $(document).ready(function() {
 
         document.querySelectorAll('.menu-item').forEach(item => {
             item.addEventListener('click', (e) => {
+
+                // Remove the 'active' class from all menu items
+                document.querySelectorAll('.menu-item').forEach(el => el.classList.remove('active'));
+
+                //Find the parent element and add the class 'active'
+                const menuItemInner = e.currentTarget.closest('.menu-item');
+                menuItemInner.classList.add('active');
+
                 const target = parseInt(item.getAttribute('data-target'));
                 slideAnim(e, null, target);
+
             });
         });
     }
