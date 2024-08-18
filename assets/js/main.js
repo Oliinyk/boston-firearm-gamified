@@ -138,7 +138,7 @@ $(document).ready(function() {
             );
         }
 
-        container.addEventListener("wheel", slideAnim);
+        // container.addEventListener("wheel", slideAnim);
         window.addEventListener("resize", sizeIt);
 
         document.querySelector('.prev-item').addEventListener("click", (e) => slideAnim(e, 'prev'));
@@ -202,7 +202,7 @@ $(document).ready(function() {
             }
         } else {
             if (container) {
-                container.removeEventListener("wheel", slideAnim);
+                // container.removeEventListener("wheel", slideAnim);
                 window.removeEventListener("resize", sizeIt);
                 clearInlineStyles();
                 container = null;

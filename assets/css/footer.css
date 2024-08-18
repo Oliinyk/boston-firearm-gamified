@@ -32,12 +32,11 @@
 }
 .footer .nav .menu {
     display: flex;
-    gap: 1.5rem;
+    gap: 0.5rem;
     margin: 0 auto;
-    /* padding: 0 0 0 7.5vw; */
 }
 .footer .nav a {
-    font-size: 20px;
+    font-size: 18px;
     text-wrap: nowrap;
     color: var(--divider-light-4);
     position: relative;
@@ -104,8 +103,6 @@
 }
 .social-list {
     display: flex;
-    /* align-items: flex-end;
-    margin: 0 0 0 auto; */
 }
 .social-ico {
     display: flex;
@@ -121,9 +118,32 @@
     fill: var(--primary);
 }
 
+@media (min-width: 1200px) {
+    .footer .nav .menu {
+        gap: 1.5rem;
+    }
+    .footer .nav a {
+        font-size: 20px;
+    }
+}
 @media (min-width: 1440px) {
     .footer .nav a {
-        font-size: 24px;
+        font-size: 22px;
+    }
+    .footer .nav .book-now a {
+        font-size: 22px;
+    }
+    .footer .nav .book-now a::after {
+        left: calc(50% - 80px);
+        border-width: 0 80px 140px 80px;
+    }
+    .footer .nav .book-now a::before {
+        left: calc(50% - 84px);
+        border-width: 0 84px 146px 84px;
+    }
+}
+@media (min-width: 1680px) {
+    .footer .nav a {
         padding: 50px 15px 8px;         
     }
     .footer .nav .book-now {

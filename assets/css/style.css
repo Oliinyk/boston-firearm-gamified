@@ -1,16 +1,6 @@
 @import "footer.css";
 @import "base.css";
 
-.section {
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    scroll-snap-align: start;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;
-    padding: 2rem 0;
-}
 .header {
     position: absolute;
     width: 100%;
@@ -42,6 +32,18 @@
     font-size: 14px;
     text-transform: uppercase;
     order: 3;
+}
+.section {
+    /* height: 100vh; */
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    scroll-snap-align: start;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    padding: 2rem 0;
+    overflow: hidden;
 }
 
 /* 1 */
@@ -239,9 +241,6 @@
 /* 2 */
 .section.section-how-join {
     background-image: url('../img/how-to-join.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-    min-height: 100vh;
 }
 .how-join-step {
     display: flex;
@@ -778,23 +777,13 @@
     padding: 1rem 0;
     gap: 1rem;
     border: none;
-    overflow-y: scroll;
+    overflow-y: auto;
     max-height: 653px;
     position: static;
     display: none;
 }
 .section-experience .experience-sidebar::after {
     left: 4px;
-}
-.section-experience .experience-sidebar::-webkit-scrollbar {
-    width: 5px;
-    background-color: var(--divider-light-3);
-    border-radius: 5px;
-    height: 200px;
-    width: 2px;
-}
-.section-experience .experience-sidebar::-webkit-scrollbar-thumb {
-    background: var(--white);
 }
 .section-experience .sidebar-item {
     max-width: 135px;
@@ -883,6 +872,9 @@
     flex-wrap: wrap;
     gap: 2rem;
 }
+.license-wrap:focus {
+    outline: none;
+}
 .license-content {
     width: 100%;
     max-width: 1140px;
@@ -906,23 +898,6 @@
 .license-item + .license-item {
     margin: 2rem auto 0;
 }
-.license-bg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    margin: auto;
-    z-index: 0;
-    object-fit: cover;
-    object-position: 0 0;
-    margin: 0;
-    width: 100%;
-    height: 100%;
-}
-/* .license-bg-desc {
-    display: none;
-} */
 .license-bg-mob {
     position: absolute;
     top: 0;
@@ -996,7 +971,7 @@
     background-color: var(--blue);
     text-align: center;
     padding: 2rem;
-    width: 100%;
+    width: calc(100% + 5px);
     margin: 4rem auto 0;
 }
 .banner-certificate .img-holder {
@@ -1111,27 +1086,15 @@
     font-family: 'Hitmarker-Normal-Bold';
 }
 
-/* @media (max-width: 991px) {
-    .section-experience {
-        background-image: none!important;
-    }
-} */
-
 @media (min-width: 768px) {
     /* 3 */
     .weapon-item .item-img {
-        /* padding: 2.2rem 0 0.9rem; */
         padding: 2.2rem 1rem 0;
         max-width: 260px;
     }
     .section-compare-packages .weapon-item:last-child .item-img {
         max-width: 410px;
     }
-
-    /* 7 */
-    /* .banner-certificate .img-holder {
-        margin: -55px 0 -75px;
-    } */
 }
 
 @media (min-width: 992px) {
@@ -1383,9 +1346,16 @@
     }
 
     /* 7 */
+    .section-license {
+        align-items: flex-start;
+    }
     .license-wrap {
         flex-wrap: nowrap;
         gap: 2rem;
+        overflow-y: auto;
+        overflow-x: hidden;
+        margin-top: 115px;
+        max-height: calc(100vh - 185px);
     }
     .license-sidebar {
         max-width: 70%;
@@ -1424,9 +1394,6 @@
     }
     .license-item + .license-item {
         margin: 0 auto;
-    }
-    .license-bg-desc {
-        display: block;
     }
     .license-bg-mob {
         display: none;

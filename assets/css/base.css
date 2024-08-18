@@ -89,7 +89,6 @@
     font-weight: 600;
     font-style: normal;
 }
-
 /* color palette */
 :root {
     --white: #ffffff;
@@ -102,13 +101,21 @@
     --divider-light-3: rgba(255, 255, 255, 0.5);
     --divider-light-4: rgba(255, 255, 255, 0.75);
 }
-
 body {
     font-family: "Inter", sans-serif;
     font-optical-sizing: auto;
     font-weight: normal;
     font-style: normal;
     color: var(--white);
+}
+
+::-webkit-scrollbar {
+    background-color: var(--divider-light-3);
+    border-radius: 5px;
+    width: 2px;
+}
+::-webkit-scrollbar-thumb {
+    background: var(--white);
 }
 
 a {
@@ -118,9 +125,6 @@ a {
 a {
     transition: all .25s ease-in-out;
 }
-/* .btn:hover {
-    scale: 1.05;
-} */
 .btn {
     font-family: "Hitmarker-Normal-Medium";
     font-size: 15px;
@@ -160,7 +164,6 @@ a {
     transition: opacity 150ms;
     transition-delay: 75ms;
 }
-
 .news-cta {
     position: relative;
     overflow: hidden;
@@ -242,9 +245,6 @@ a {
     stroke-linejoin: round;
     stroke-dasharray: 280;
     stroke-dashoffset: 0;
-    stroke: #fff;
-    stroke-width: 2;
-    fill: #fff;
 }
 .line-gan-icon {
     stroke: #fff;
@@ -305,7 +305,7 @@ a {
 
 @media (min-width: 992px) {
     body {
-        overflow: hidden;
+        overflow-x: hidden;
     }
     .btn {
         font-size: 22px;
@@ -317,5 +317,6 @@ a {
     }
     .scroll-container {
         display: flex;
+        /* min-height: 100vh; */
     }
 }
