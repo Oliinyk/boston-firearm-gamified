@@ -884,10 +884,12 @@
     gap: 2rem;
 }
 .license-content {
-    width: 700%;
+    width: 100%;
     max-width: 1140px;
-    display: flex;
-    flex-direction: column;
+    /* display: flex; */
+    /* flex-direction: column; */
+    display: grid;
+    /* grid-template-columns: repeat(2, minmax(0, 1fr)); */
     gap: 1rem;
 }
 .license-item {
@@ -896,7 +898,7 @@
     padding: 2.5rem 1rem;
     display: grid;
     gap: 1.5rem;
-    flex-wrap: wrap;
+    align-items: flex-start;
     position: relative;
     max-width: 375px;
     margin: 0 auto;
@@ -904,6 +906,23 @@
 .license-item + .license-item {
     margin: 2rem auto 0;
 }
+.license-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    z-index: 0;
+    object-fit: cover;
+    object-position: 0 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+}
+/* .license-bg-desc {
+    display: none;
+} */
 .license-bg-mob {
     position: absolute;
     top: 0;
@@ -1366,7 +1385,13 @@
     /* 7 */
     .license-wrap {
         flex-wrap: nowrap;
-        gap: 4rem;
+        gap: 2rem;
+    }
+    .license-sidebar {
+        max-width: 70%;
+    }
+    .license-sidebar {
+        max-width: 30%;
     }
     .license-item {
         background-image: url('../img/license-item-bg.svg');
@@ -1374,11 +1399,34 @@
         background-repeat: no-repeat;
         padding: 2.4rem 2.4rem;
         max-width: 100%;
-        row-gap: 0.5rem;
-        grid-template-columns: repeat(6, minmax(0, 1fr));
+        grid-template-columns: repeat(12, minmax(0, 1fr));
+    }
+    .license-item::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 1;
+    }
+    .license-item::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: -5px;
+        bottom: 0;
+        width: 5px;
+        height: 100%;
+        background-image: url('../img/license-item-bg.svg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position-x: 100%;
     }
     .license-item + .license-item {
         margin: 0 auto;
+    }
+    .license-bg-desc {
+        display: block;
     }
     .license-bg-mob {
         display: none;
@@ -1390,23 +1438,22 @@
     .license-item .item-title {
         font-size: 28px;
         text-align: left;
-        /* max-width: 70%; */
         order: 1;
-
-        grid-column: span 4 / span 4;
+        grid-column: span 8 / span 8;
     }
     .license-item .btn.btn-transparent {
         margin: 0 0 0 auto;
         order: 2;
-        grid-column: span 2 / span 2;
+        grid-column: span 4 / span 4;
     }
     .license-item .price-col {
         text-align: left;
         order: 3;
+        grid-column: span 4 / span 4;
     }
     .license-item .firearms-list {
         order: 4;
-        grid-column: span 5 / span 5;
+        grid-column: span 8 / span 8;
     }
     .section-license .title-section {
         text-align: left;
@@ -1451,7 +1498,19 @@
     }
 
 }
-
+@media (min-width: 1200px) {
+    /* 7 */
+    .license-item {
+        column-gap: 0;
+        row-gap: 0.5rem;
+    }
+    .license-item .price-col {
+        grid-column: span 3 / span 3;
+    }
+    .license-item .firearms-list {
+        grid-column: span 9 / span 9;
+    }
+}
 @media (min-width: 1400px) {
     .weapon-info {
         grid-template-columns: repeat(6, minmax(0, 1fr));
@@ -1476,5 +1535,9 @@
     }
     .weapon-item .item-title {
         padding: 0.65rem 2rem;
+    }
+    /* 7 */
+    .license-wrap {
+        gap: 4rem;
     }
 }

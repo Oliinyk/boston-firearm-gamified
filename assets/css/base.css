@@ -233,8 +233,31 @@ a {
     transition-delay: 100ms;
 }
 
-
-
+/* svg animation */
+.stroke-anim {
+    stroke-width: 2;
+}
+.line-icon {
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-dasharray: 280;
+    stroke-dashoffset: 0;
+}
+.line-icon:hover {
+    -webkit-animation: draw 3s linear alternate infinite;
+    animation: draw 3s linear alternate infinite;
+    stroke: var(--primary);
+}
+@-webkit-keyframes draw {
+    0% {
+        stroke-dashoffset: 280;
+    }
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+/* end svg animation */
 
 .container {
     position: relative;
