@@ -10,10 +10,11 @@ $(document).ready(function() {
     let offsets = [];
     let iw;
     let currentSlide = 0;
+    let slideAnimActive = true;
 
     function initScript() {
         container = document.querySelector(".scroll-container");
-        slides = document.querySelectorAll(".section");
+        slides = document.querySelectorAll(".scroll-container .section");
         menuItems = document.querySelectorAll('.menu-item');
         stepItems = document.querySelectorAll('.step-item');
 
@@ -26,6 +27,8 @@ $(document).ready(function() {
         function slideAnim(e, direction, targetSlide = null) {
             e.preventDefault();
             const oldSlide = currentSlide;
+
+            if (!slideAnimActive) return;
 
             if (e.type === "click" || e.type === "keydown") {
                 if (targetSlide !== null) {
@@ -50,8 +53,6 @@ $(document).ready(function() {
                 return;
             }
 
-            
-            // 1
             gsap.to(container, {
                 duration: 1.1,
                 ease: "expo.out",
@@ -76,8 +77,13 @@ $(document).ready(function() {
                     } else if (currentSlide === 5) {
                         // slide 6
                         animateStepItems6();
+                    } else if (currentSlide === 6) {
+                        // slide 7
+                        animateStepItems7();
+                    } else if (currentSlide === 7) {
+                        // slide 8
+                        animateStepItems8();
                     }
-
                 }
             });
         }
@@ -87,7 +93,7 @@ $(document).ready(function() {
             menuItems.forEach(item => item.classList.remove('active'));
         
             // The data-slide value can be extracted from the flow section
-            const currentSlideData = slides[currentSlide].getAttribute('data-slide');
+            const currentSlideData = slides[currentSlide]?.getAttribute('data-slide');
         
             // Find the menu item where data-target is equal to currentSlideData
             const activeMenuItem = Array.from(menuItems).find(item => item.getAttribute('data-target') === currentSlideData);
@@ -102,7 +108,7 @@ $(document).ready(function() {
         function animateStepItems1() {
             // gsap.killTweensOf('.title');
             
-            gsap.fromTo('.title, .subtitle, .wrap-btn',
+            gsap.fromTo('.hero .title, .hero .subtitle, .hero .wrap-btn',
                 { opacity: 0, y: 500 }, 
                 { 
                     opacity: 1, 
@@ -119,7 +125,7 @@ $(document).ready(function() {
         function animateStepItems2() {
             // gsap.killTweensOf('.title-section, .subtitle-section, .step-item, .scroll-prompt');
             
-            gsap.fromTo('.title-section, .subtitle-section, .step-item, .scroll-prompt',
+            gsap.fromTo('.section-how-join .title-section, .section-how-join .subtitle-section, .section-how-join .step-item, .section-how-join .scroll-prompt',
                 { opacity: 0, x: 500 },
                 {
                     opacity: 1, 
@@ -133,23 +139,33 @@ $(document).ready(function() {
 
         // 3
         function animateStepItems3() {
-            gsap.fromTo('.tab-wrap',
-                { opacity: 0, x: -500 },
+            gsap.fromTo('.section-compare-packages .tab-wrap .title-section, .section-compare-packages .tab-wrap .subtitle-section',
+                { opacity: 0, y: -500 },
                 { 
                     opacity: 1,
-                    x: 0,
+                    y: 0,
                     stagger: 0.2,
                     duration: 1.5,
                     ease: "power2.out"
                 }
             );
-            gsap.fromTo('.sidebar-protection',
+            gsap.fromTo('.section-compare-packages .nav-tabs, .section-compare-packages .tab-content',
+                { opacity: 0, y: 500 },
+                { 
+                    opacity: 1,
+                    y: 0,
+                    stagger: 0.2,
+                    duration: 2,
+                    ease: "power2.out"
+                }
+            );
+            gsap.fromTo('.section-compare-packages .sidebar-protection',
                 { opacity: 0, x: 500 },
                 { 
                     opacity: 1,
                     x: 0,
                     stagger: 0.2,
-                    duration: 1.5,
+                    duration: 2,
                     ease: "power2.out"
                 }
             );
@@ -158,7 +174,7 @@ $(document).ready(function() {
         // 4
         function animateStepItems4() {
             // gsap.killTweensOf('.title-section');
-            gsap.fromTo('.title-section',
+            gsap.fromTo('.section-course-curriculum .title-section',
                 { opacity: 0, y: -500 }, 
                 { 
                     opacity: 1, 
@@ -233,6 +249,60 @@ $(document).ready(function() {
                 }
             );
         }
+        function animateStepItems7() {
+            gsap.fromTo('.section-license .license-content .title-section, .section-license .license-item, .section-license .banner-certificate',
+                { opacity: 0, y: -500 },
+                { 
+                    opacity: 1,
+                    y: 0,
+                    stagger: 0.2,
+                    duration: 1.5,
+                    ease: "power2.out"
+                }
+            );
+            gsap.fromTo('.section-license .license-sidebar .title-section, .section-license .license-list, .section-license .firearms-list',
+                { opacity: 0, y: 500 },
+                { 
+                    opacity: 1,
+                    y: 0,
+                    stagger: 0.2,
+                    duration: 1.5,
+                    ease: "power2.out"
+                }
+            );
+        }
+        function animateStepItems8() {
+            gsap.fromTo('.section-faq .faq-col .title-section',
+                { opacity: 0, y: -500 },
+                { 
+                    opacity: 1,
+                    y: 0,
+                    stagger: 0.2,
+                    duration: 1.5,
+                    ease: "power2.out"
+                }
+            );
+            gsap.fromTo('.section-faq .faq-list>li',
+                { opacity: 0, y: 500 },
+                { 
+                    opacity: 1,
+                    y: 0,
+                    stagger: 0.2,
+                    duration: 1.5,
+                    ease: "power2.out"
+                }
+            );
+            gsap.fromTo('.section-faq .contact-col',
+                { opacity: 0, x: 500 },
+                { 
+                    opacity: 1,
+                    x: 0,
+                    stagger: 0.2,
+                    duration: 2.5,
+                    ease: "power2.out"
+                }
+            );
+        }
 
         // container.addEventListener("wheel", slideAnim);
         window.addEventListener("resize", sizeIt);
@@ -263,6 +333,8 @@ $(document).ready(function() {
 
             });
         });
+
+        slideAnimActive = true;
     }
 
     function sizeIt() {
@@ -285,6 +357,20 @@ $(document).ready(function() {
         }
     }
 
+    function destroyScript() {
+        if (container) {
+            // container.removeEventListener("wheel", slideAnim);
+            window.removeEventListener("resize", sizeIt);
+            clearInlineStyles();
+            container = null;
+            slides = null;
+            menuItems = null;
+            stepItems = null;
+            offsets = [];
+            slideAnimActive = false;
+        }
+    }
+
     if (window.innerWidth >= 992) {
         initScript();
     }
@@ -298,14 +384,7 @@ $(document).ready(function() {
             }
         } else {
             if (container) {
-                // container.removeEventListener("wheel", slideAnim);
-                window.removeEventListener("resize", sizeIt);
-                clearInlineStyles();
-                container = null;
-                slides = null;
-                menuItems = null;
-                stepItems = null;
-                offsets = [];
+                destroyScript();
             }
         }
     });
