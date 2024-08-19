@@ -77,6 +77,7 @@ $(document).ready(function() {
                     } else if (currentSlide === 5) {
                         // slide 6
                         animateStepItems6();
+                        updateSectionExperience();
                     } else if (currentSlide === 6) {
                         // slide 7
                         animateStepItems7();
@@ -451,36 +452,53 @@ $(document).ready(function() {
     });
 
     // 6
-    // default background image
-    // function changeBgImg() {
-    //     $('.section-experience').css('background-image', "url('assets/img/experience-bg.png')");
-    // }
-    // changeBgImg();
-
-    // $('.section-experience .sidebar-item').on('click', function() {
-    //     let newSrc = $(this).find('img').attr('src');
-    //     $('.section-experience').css('background-image', 'url('+newSrc+')');
-    //     $('.section-experience .sidebar-item').removeClass('selected');
-    //     $(this).addClass('selected');
-    // });
-
-    // 
-    function changeBgImg() {
-        if ($(window).width() >= 992) {
-            $('.section-experience').css('background-image', "url('assets/img/experience-bg.png')");
+    function updateSectionExperience() {
+        if ($(window).width() < 992) return;
+    
+        const $section = $('.section-experience');
+        const $selectedItem = $('.section-experience .sidebar-item.selected');
+    
+        $section.find('.videoBg').remove(); // Remove existing video background
+    
+        const $media = $selectedItem.find('img, video');
+        const mediaSrc = $media.is('video') ? $media.find('source').attr('src') : $media.attr('src');
+    
+        if ($media.is('video')) {
+            // If the selected item contains a video
+            $section.css('background-image', 'none');
+    
+            $('<video>', {
+                src: mediaSrc,
+                autoplay: true,
+                muted: true,
+                loop: true,
+                class: 'videoBg',
+                css: {
+                    position: 'absolute',
+                    top: 0,
+                    left: 0,
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'cover',
+                    zIndex: -1
+                }
+            }).appendTo($section);
+        } else if ($media.is('img')) {
+            // If the selected item contains an image
+            $section.css('background-image', 'url(' + mediaSrc + ')');
         }
     }
-    changeBgImg();
+    updateSectionExperience();
     
-    $('.section-experience .sidebar-item').on('click', function() {
-        if ($(window).width() >= 992) {
-            let newSrc = $(this).find('img').attr('src');
-            $('.section-experience').css('background-image', 'url(' + newSrc + ')');
-            $('.section-experience .sidebar-item').removeClass('selected');
-            $(this).addClass('selected');
-        }
+    
+    $(document).on('click', '.section-experience .sidebar-item', function() {
+        if ($(window).width() < 992) return;
+    
+        $('.section-experience .sidebar-item').removeClass('selected');
+        $(this).addClass('selected');
+    
+        updateSectionExperience(); // Update the experience section when an item is clicked
     });
-
 
 
     // slider
@@ -534,7 +552,7 @@ $(document).ready(function() {
     moveSidebar();
 
     $(window).on('resize', function() {
-        changeBgImg();
+        updateSectionExperience();
         moveSidebar();
     });
 });

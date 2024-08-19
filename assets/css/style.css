@@ -764,6 +764,7 @@
 /* 6 */
 .section-experience {
     background-color: var(--blue);
+    background-size: cover;
     min-height: auto;
 }
 .section-experience .main-content {
@@ -801,6 +802,10 @@
 }
 .section-experience .sidebar-item.selected img {
     border: 1px solid var(--primary);
+}
+.section-experience .sidebar-item-media {
+    height: 100%;
+    width: 100%;
 }
 .section-experience .content-wrap {
     position: relative;
@@ -1311,9 +1316,10 @@
     }
 
     /* 6 */
-    /* .section-experience {
-        background-image: url('../img/experience-bg.png')!important;
-    } */
+    .section-experience {
+        /* background-image: url('../img/experience-bg.png')!important; */
+        background-color: transparent;
+    }
     .section-experience .main-content {
         flex-direction: row;
     }
