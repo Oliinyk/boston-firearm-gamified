@@ -972,7 +972,7 @@
     text-align: center;
     padding: 2rem;
     width: calc(100% + 5px);
-    margin: 4rem auto 0;
+    margin: 1.5rem auto 0;
 }
 .banner-certificate .img-holder {
     margin: -55px auto 15px;
@@ -984,6 +984,8 @@
 }
 .license-sidebar {
     width: 100%;
+    max-width: 450px;
+    margin: 3rem auto 0;
 }
 .license-sidebar .title-section {
     margin: 0 0 1.5rem;
@@ -1357,9 +1359,9 @@
         margin-top: 115px;
         max-height: calc(100vh - 185px);
     }
-    .license-sidebar {
+    /* .license-content {
         max-width: 70%;
-    }
+    } */
     .license-sidebar {
         max-width: 30%;
     }

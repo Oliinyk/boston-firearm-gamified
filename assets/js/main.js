@@ -64,9 +64,18 @@ $(document).ready(function() {
                     } else if (currentSlide === 1) {
                         // slide 2
                         animateStepItems2();
+                    } else if (currentSlide === 2) {
+                        // slide 3
+                        animateStepItems3();
                     } else if (currentSlide === 3) {
                         // slide 4
                         animateStepItems4();
+                    } else if (currentSlide === 4) {
+                        // slide 5
+                        animateStepItems5();
+                    } else if (currentSlide === 5) {
+                        // slide 6
+                        animateStepItems6();
                     }
 
                 }
@@ -91,7 +100,7 @@ $(document).ready(function() {
 
         // 1
         function animateStepItems1() {
-            gsap.killTweensOf('.title');
+            // gsap.killTweensOf('.title');
             
             gsap.fromTo('.title, .subtitle, .wrap-btn',
                 { opacity: 0, y: 500 }, 
@@ -108,15 +117,39 @@ $(document).ready(function() {
 
         // 2
         function animateStepItems2() {
-            gsap.killTweensOf('.step-item, .scroll-prompt');
+            // gsap.killTweensOf('.title-section, .subtitle-section, .step-item, .scroll-prompt');
             
-            gsap.fromTo('.step-item, .scroll-prompt', 
-                { opacity: 0, x: 500 }, 
-                { 
+            gsap.fromTo('.title-section, .subtitle-section, .step-item, .scroll-prompt',
+                { opacity: 0, x: 500 },
+                {
                     opacity: 1, 
-                    x: 0, 
-                    stagger: 0.2, 
-                    duration: 1.5, 
+                    x: 0,
+                    stagger: 0.2,
+                    duration: 1.5,
+                    ease: "power2.out"
+                }
+            );
+        }
+
+        // 3
+        function animateStepItems3() {
+            gsap.fromTo('.tab-wrap',
+                { opacity: 0, x: -500 },
+                { 
+                    opacity: 1,
+                    x: 0,
+                    stagger: 0.2,
+                    duration: 1.5,
+                    ease: "power2.out"
+                }
+            );
+            gsap.fromTo('.sidebar-protection',
+                { opacity: 0, x: 500 },
+                { 
+                    opacity: 1,
+                    x: 0,
+                    stagger: 0.2,
+                    duration: 1.5,
                     ease: "power2.out"
                 }
             );
@@ -124,8 +157,17 @@ $(document).ready(function() {
 
         // 4
         function animateStepItems4() {
-            gsap.killTweensOf('.course-curriculum-nav li, .curriculum-desc');
-            
+            // gsap.killTweensOf('.title-section');
+            gsap.fromTo('.title-section',
+                { opacity: 0, y: -500 }, 
+                { 
+                    opacity: 1, 
+                    y: 0, 
+                    stagger: 0.2, 
+                    duration: 1.5, 
+                    ease: "power2.out"
+                }
+            );
             gsap.fromTo('.course-curriculum-nav li, .curriculum-desc',
                 { opacity: 0, y: 500 }, 
                 { 
@@ -133,6 +175,60 @@ $(document).ready(function() {
                     y: 0, 
                     stagger: 0.2, 
                     duration: 1.5, 
+                    ease: "power2.out"
+                }
+            );
+        }
+        function animateStepItems5() {
+            gsap.fromTo('.section-weapon .weapon-sidebar',
+                { opacity: 0, y: -500 },
+                { 
+                    opacity: 1,
+                    y: 0,
+                    stagger: 0.2,
+                    duration: 1.5,
+                    ease: "power2.out"
+                }
+            );
+            gsap.fromTo('.section-weapon .image-section',
+                { opacity: 0, x: 500 },
+                { 
+                    opacity: 1,
+                    x: 0,
+                    stagger: 0.2,
+                    duration: 1.5,
+                    ease: "power2.out"
+                }
+            );
+            gsap.fromTo('.section-weapon .info-section',
+                { opacity: 0, y: 500 },
+                { 
+                    opacity: 1,
+                    y: 0,
+                    stagger: 0.2,
+                    duration: 1.5,
+                    ease: "power2.out"
+                }
+            );
+        }
+        function animateStepItems6() {
+            gsap.fromTo('.section-experience .experience-sidebar',
+                { opacity: 0, y: -500 },
+                { 
+                    opacity: 1,
+                    y: 0,
+                    stagger: 0.2,
+                    duration: 1.5,
+                    ease: "power2.out"
+                }
+            );
+            gsap.fromTo('.section-experience .content-wrap',
+                { opacity: 0, y: 500 },
+                { 
+                    opacity: 1,
+                    y: 0,
+                    stagger: 0.2,
+                    duration: 1.5,
                     ease: "power2.out"
                 }
             );
@@ -347,8 +443,19 @@ $(document).ready(function() {
         });
     });
 
+    // cut function
+    function moveSidebar() {
+        if ($(window).width() <= 992) {
+            $('.banner-certificate').before($('.license-sidebar'));
+        } else {
+            $('.container .license-wrap').append($('.license-sidebar'));
+        }
+    }
+
+    moveSidebar();
 
     $(window).on('resize', function() {
         changeBgImg();
+        moveSidebar();
     });
 });
