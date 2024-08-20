@@ -462,16 +462,16 @@ $(document).ready(function() {
     
         const $media = $selectedItem.find('img, video');
         const mediaSrc = $media.is('video') ? $media.find('source').attr('src') : $media.attr('src');
-    
+        const mediaType = $media.is('video') ? $media.find('source').attr('type') : $media.attr('type');
+
         if ($media.is('video')) {
             // If the selected item contains a video
             $section.css('background-image', 'none');
-    
-            $('<video>', {
-                src: mediaSrc,
+
+            const $video = $('<video>', {
                 autoplay: true,
-                muted: true,
                 loop: true,
+                muted: true,
                 class: 'videoBg',
                 css: {
                     position: 'absolute',
@@ -482,7 +482,16 @@ $(document).ready(function() {
                     objectFit: 'cover',
                     zIndex: -1
                 }
-            }).appendTo($section);
+            });
+    
+            $('<source>', {
+                src: mediaSrc,
+                type: mediaType
+            }).appendTo($video);
+    
+            $video.appendTo($section);
+
+            $video[0].muted = true;
         } else if ($media.is('img')) {
             // If the selected item contains an image
             $section.css('background-image', 'url(' + mediaSrc + ')');

@@ -784,7 +784,7 @@
     display: none;
 }
 .section-experience .experience-sidebar::after {
-    left: 4px;
+    left: 5px;
 }
 .section-experience .sidebar-item {
     max-width: 135px;
@@ -1326,6 +1326,20 @@
     .section-experience .experience-sidebar {
         display: flex;
         margin: 0;
+        position: relative;
+        z-index: 1;
+    }
+    .section-experience .tab-sidebar::after {
+        display: none;
+    }
+    .section-experience .main-content::after {
+        position: absolute;
+        content: '';
+        top: 0;
+        left: 5px;
+        width: 1px;
+        height: 100%;
+        background-color: var(--divider-light-3);
     }
     .section-experience .content-text .title-section {
         text-align: left;
